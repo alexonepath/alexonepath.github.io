@@ -8,10 +8,10 @@
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/images/common/tiger.png">
     <!-- Styles'n'Scripts -->
     <link rel="stylesheet" type="text/css" href="/assets/built/accordion.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/default.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>
@@ -83,7 +83,7 @@
   </ul>
 </blockquote>
 
-<h2 id="사전준비">사전준비</h2>
+<h3 id="사전준비">사전준비</h3>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mac에서 Ruby 설치</span>
 <span class="nv">$ </span>xcode-select <span class="nt">--install</span>
 <span class="nv">$ </span>brew install rbenv ruby-build
@@ -94,50 +94,14 @@
 <span class="nv">$ </span>gem install bundler jekyll
 </code></pre></div></div>
 
-<h2 id="jekyll-프로젝트-생성-및-실행-접속">jekyll 프로젝트 생성 및 실행 (<a href="http://127.0.0.1:4000" target="_blank">접속</a>)</h2>
-<pre><code class="language-$xslt"># 기본 프로젝트 생성
-$ jekyll new github-page
-$ cd github-page
+<h3 id="jekyll-프로젝트-생성-및-실행-접속">jekyll 프로젝트 생성 및 실행 (<a href="http://127.0.0.1:4000" target="_blank">접속</a>)</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 기본 프로젝트 생성</span>
+<span class="nv">$ </span>jekyll new github-page
+<span class="nv">$ </span><span class="nb">cd </span>github-page
 
-# 실행
-$ bundle exec jekyll serve
-</code></pre>
-
-<h2 id="구조-설명">구조 설명</h2>
-<p><img src="/assets/images/post/githubpage/jekyll/jekyll-1-init-1.png" alt="Jekyll Project Structure" height="400px" /></p>
-
-<p>위의 기본 프로젝트는 _post, _site만 있을것이다.</p>
-<ul>
-  <li><strong>_categories :</strong> 카테고리 설정을 위한 *.md 파일들이 위치하는 디렉토리 (다음회에서 설명)</li>
-  <li><strong>_data :</strong> yaml, json, csv 파일들이 위치하는 디렉토리 (데이터를 저장해 놓고 호출하여 사용)</li>
-  <li><strong>_draft :</strong> 작성중인 포스트가 위치하는 디렉토리 (아직 온라인에 게시하지 않을 포스트)</li>
-  <li><strong>_includes :</strong> 재사용하기 위한 파일을 관리 {\% include file_path \%}와 같은 형식으로 포함</li>
-  <li><strong>_layouts :</strong> index.html 또는 포스트 등등의 컨텐츠를 포장하기 위해 사용.</li>
-  <li><strong>_plugins :</strong> jekyll에서 사용할 플러그인을 설치한 디렉토리</li>
-  <li><strong>_posts :</strong> 컨텐츠를 관리하는 디렉토리 (파일형식 : year-month-day-title.md)</li>
-  <li><strong>assets :</strong> css, image, js 등의 리소를 관리하는 디렉토리</li>
-  <li><strong>output :</strong> jekyll 컴파일 후 생성되는 정적 파일들이 생성되는 위치. (기본값은 _site)</li>
-  <li><strong>_config.yml :</strong> 환경설정 정보 관리</li>
-</ul>
-
-<h2 id="ide-설정하기-webstorm">IDE 설정하기 (Webstorm)</h2>
-<ul>
-  <li>사전준비 및 기본 프로젝트를 실행해 보았다.</li>
-  <li>이제 실제 사이트 구축을 위한 IDE 설정을 먼저하겠다.</li>
-  <li>Highlight 및 Reformat시 Liquid 문법이 적용되도록 하기.</li>
-</ul>
-
-<p>플러그인 설치 및 적용</p>
-<ol>
-  <li>Twig 플러그인 설치 (Settings &gt; Plugins &gt; Browser repositories &gt; Twig 검색 후 설치)</li>
-  <li>적용파일 추가 (Settings &gt; Editor &gt; File Types)
-    <ul>
-      <li>우측 (Recognized File Types) Twig 검색</li>
-      <li>Registered Patterns 아래의 2개 항목 추가</li>
-      <li>*.html, *.liquid</li>
-    </ul>
-  </li>
-</ol>
+<span class="c"># 실행</span>
+<span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
 
 
 

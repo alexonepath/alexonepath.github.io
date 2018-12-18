@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/common/favicon.png">
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/accordion.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/default.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+    <style>
+        p, ol, ul{
+            width: 100%;
+        }
+        blockquote{
+            width: 100%;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="site-wrapper">
+        <header class="site-header">
+
+    <div class="wrapper">
+
+        <a class="site-title" href="/">
+            <span class="site-logo">Alexander's life</span>
+            <span class="site-title">기술 블로그</span>
+        </a>
+
+        <nav class="site-nav">
+            <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+                </svg>
+            </a>
+        </nav>
+    </div>
+</header>
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <div class="page-content">
+    <div class="wrapper">
+        <section class="content-layout">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://alexonepath.github.io">
+                <div itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+                    <meta itemprop="url" content="">
+                    <meta itemprop="width" content="800">
+                    <meta itemprop="height" content="800">
+                </div>
+                <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="Alexander's Life">
+                    <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="">
+                        <meta itemprop="width" content="220">
+                        <meta itemprop="height" content="57">
+                    </div>
+                </div>
+                <header class="post-header">
+                    <h1 class="post-title" itemprop="name headline">Jekyll 카테고리 및 페이징</h1>
+                    <p class="post-meta"><time datetime="2018-12-18T09:00:00+09:00" itemprop="datePublished dateModified">Dec 18, 2018</time> • <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">전성종</span></span><img src="/assets/images/authors/alex.jpg" class="gravatar"></p>
+                </header>
+                <blockquote>
+  <p>글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.<br />
+글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성</p>
+</blockquote>
+
+<h3 id="_cnofigyml-추가">_cnofig.yml 추가</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">categories</span><span class="pi">:</span> <span class="c1"># 카테고리정의 markdown 파일들이 위치할 디렉토리 이름. (프로젝트에 _categories 디렉토리 생성)</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># html 페이지 생성</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/category/:path/</span> <span class="c1"># 생성된 페이지의 URL 형식</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+  <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">category</span>
+<span class="na">values</span><span class="pi">:</span>
+  <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">category"</span>  <span class="c1"># 카테고리 페이지 로딩시 사용할 Layout 페이지 (_layouts 폴더에 category.html 이용)</span>
+</code></pre></div></div>
+
+<h3 id="카테고리-정의">카테고리 정의</h3>
+<ul>
+  <li>2depth의 카테고리가 가능하도록 정의할 것이다.</li>
+  <li>각 카테고리가 나타는 순서를 정의할 것이다.</li>
+</ul>
+
+<p><img src="/assets/images/post/githubpage/jekyll/2018-12-18-jekyll-3-category-1.png" alt="Category markdown" height="200px" /></p>
+
+<ul>
+  <li>카테고리 디렉토리 구조
+    <ul>
+      <li>1depth의 카테고리는 _categories 디렉토리 아래에 생성</li>
+      <li>2depth의 카테고리는 1depth의 파일명으로 디렉토리를 생성하고 해당 디렉토리 하위에 *.md 파일을 정의한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>카테고리 파일정의</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- 파일이름 githubpage.md (1Depth) --&gt;
+---
+</span>order: 1 <span class="c">&lt;!-- order 필드로 카테고리를 정렬 --&gt;</span>
+title: Github Page <span class="c">&lt;!-- 카테고리 이름 --&gt;</span>
+name: githubpage <span class="c">&lt;!-- 포스팅의 속할 카테고리를 지정할 때 사용 --&gt;</span>
+<span class="gh">children: [jekyll] &lt;!-- 해당 카테고리에 하위 카테고리로 정의할 카테고리 배열 --&gt;
+---
+</span></code></pre></div></div>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- 파일이름 githubpage/jekyll.md (2Depth) --&gt;
+---
+</span>title: Jekyll
+name: jekyll
+<span class="gh">isSub: true
+---
+</span></code></pre></div></div>
+
+<p><strong>카테고리 트리생성 정의</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">&lt;!-- _includes 폴더에 category.html 파일을 생성 --&gt;</span>
+<span class="c">&lt;!-- {% include category.html %}와 같이 페이지에서 추가 --&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;strong</span> <span class="na">id=</span><span class="s">"menu-wrapper"</span> <span class="na">style=</span><span class="s">"color:#010F42;font-size:18px;"</span><span class="nt">&gt;</span>카테고리<span class="nt">&lt;/strong&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"menu-list accordion"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 1depth의 카테고리 정렬 --&gt;</span>
+        {% assign sortedCategories = (site.categories | sort: "order") %}
+        {% for category in sortedCategories %}
+            {% if category.isSub %}
+                {% continue %}
+            {% endif %}
+
+            {% assign linkClass = '' %}
+            {% assign toggleClass = '' %}
+            {% assign menuUrl = category.url %}
+            {% if category.children.size &gt;= 1 %}
+                {% assign menuUrl = 'javascript:;' %}
+                {% assign linkClass = 'icon-plus' %}
+                {% assign toggleClass = 'accordion-toggle' %}
+            {% endif %}
+        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"menu{{ forloop.index }}"</span> <span class="na">class=</span><span class="s">"toggle {{ toggleClass }}"</span> <span class="na">path=</span><span class="s">"{{ category.url }}"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"{{ linkClass }}"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"menu-link"</span> <span class="na">href=</span><span class="s">"{{ menuUrl }}"</span><span class="nt">&gt;</span>{{ category.title }}<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+            {% if category.children.size &gt;= 1 %}
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"menu-submenu accordion-content"</span><span class="nt">&gt;</span>
+                {% for child in category.children %}
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"head"</span> <span class="na">href=</span><span class="s">"{{ category.url }}{{ child }}/"</span><span class="nt">&gt;</span>{{ child }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                {% endfor %}
+            <span class="nt">&lt;/ul&gt;</span>
+            {% endif %}
+        {% endfor %}
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+</code></pre></div></div>
+
+<p><strong>카테고리 URL 페이지의 layout</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">&lt;!-- _layouts 폴더에 category.html 파일을 생성 --&gt;</span>
+---
+layout: default
+title: category
+---
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"content-layout"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+                {% assign postCnt = 0 %}
+                {% for post in site.posts %}
+                    {% for category in post.categories %}
+                        {% if page.name == category %}
+                            {% assign postCnt = postCnt | plus: 1 %}
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list-module"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>{{ post.date | date: '%b %d %Y' }}, {{ site.data.authors[post.author].name }}
+                      <span class="c">&lt;!--new--&gt;</span>
+                    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{ site.baseurl }}{{ site.data.authors[post.author].picture }}"</span> <span class="na">class=</span><span class="s">"gravatar"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;/span&gt;</span>
+                                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.baseurl }}{{ post.permalink }}{{ post.url | remove_first: '/' }}"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-link"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/h2&gt;</span>
+                                    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-description"</span><span class="nt">&gt;</span>{{ post.description }}<span class="nt">&lt;/p&gt;</span>
+                                <span class="nt">&lt;/a&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+                {% if postCnt == 0 %}
+                    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-link"</span> <span class="na">style=</span><span class="s">"text-align: center"</span><span class="nt">&gt;</span>곧 포스팅될 예정입니다.<span class="nt">&lt;/h2&gt;</span>
+                {% endif %}
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="페이징-정의">페이징 정의</h3>
+<p>_include 폴더에 pagenator.html 파일을 정의하였고 사용하는 페이지에서 include를 사용하여 추가.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% if paginator.total_pages &gt; 1 %}
+    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 표시할 페이지 넘버 갯수 (홀수로 정의해야 함.) --&gt;</span>
+        {% assign pageNums = 5 %}
+        {% assign median = pageNums | divided_by: 2 %}
+        {% assign tempStart = paginator.page | minus: median %}
+        {% if tempStart <span class="nt">&lt;</span><span class="err">=</span> <span class="na">0</span> <span class="err">%}</span>
+            <span class="err">{%</span> <span class="na">assign</span> <span class="na">startPage =</span><span class="err"> </span><span class="s">1</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">else</span> <span class="err">%}</span>
+            <span class="err">{%</span> <span class="na">assign</span> <span class="na">startPage =</span><span class="err"> </span><span class="s">tempStart</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span>
+
+        <span class="err">{%</span> <span class="na">assign</span> <span class="na">tempEnd =</span><span class="err"> </span><span class="s">paginator.page</span> <span class="err">|</span> <span class="na">divided_by:</span> <span class="na">2</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">if</span> <span class="na">tempEnd</span> <span class="err">&lt;=</span> <span class="na">1</span> <span class="err">%}</span>
+            <span class="err">{%</span> <span class="na">assign</span> <span class="na">endPage =</span><span class="err"> </span><span class="s">startPage</span> <span class="err">|</span> <span class="na">plus:</span> <span class="na">pageNums</span> <span class="err">|</span> <span class="na">minus:</span> <span class="na">1</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">else</span> <span class="err">%}</span>
+            <span class="err">{%</span> <span class="na">assign</span> <span class="na">endPage =</span><span class="err"> </span><span class="s">paginator.page</span> <span class="err">|</span> <span class="na">plus:</span> <span class="na">median</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span>
+        <span class="err">{%</span> <span class="na">if</span> <span class="na">endPage</span> <span class="nt">&gt;</span> paginator.total_pages %}
+            {% assign endPage = paginator.total_pages %}
+        {% endif %}
+
+        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"page-prev"</span><span class="nt">&gt;</span>
+            {% if paginator.previous_page %}
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginator.previous_page_path }}"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>No Previous Page<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+            {% else %}
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>No Previous Page<span class="nt">&lt;/span&gt;</span>
+            {% endif %}
+        <span class="nt">&lt;/li&gt;</span>
+
+        {% for page in (startPage..endPage) %}
+            {% assign isActive = "" %}
+            {% assign href = "/page" | append: page %}
+            {% if page == 1 %}
+                {% assign href = {{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }} %}
+            {% endif %}
+            {% if page == paginator.page %}
+                {% assign isActive = "active" %}
+            {% endif %}
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"page-number {{ isActive }}"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ href }}"</span><span class="nt">&gt;</span>{{ page }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        {% endfor %}
+
+        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"page-next"</span><span class="nt">&gt;</span>
+            {% if paginator.next_page %}
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginator.next_page_path }}"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+            {% else %}
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/span&gt;</span>
+            {% endif %}
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+{% endif %}
+
+</code></pre></div></div>
+
+
+                <div id="disqus_thread"></div>
+            </article>
+        </section>
+    </div>
+</div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://alexonepath.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//alexonepath.disqus.com/count.js" async></script>
+        <footer class="site-footer">
+    <div class="wrapper">
+        © Alex one path. All rights reserved. Powered by GitHub Pages.
+    </div>
+</footer>
+    </div>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/accordion.js"></script>
+</body>
+</html>

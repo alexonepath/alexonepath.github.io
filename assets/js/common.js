@@ -9,3 +9,9 @@ if (!String.prototype.format) {
         });
     };
 }
+
+$(function(){
+    $('.menu-icon').click(function(){
+       console.log(33)
+    });
+})

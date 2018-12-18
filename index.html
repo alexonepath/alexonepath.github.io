@@ -124,7 +124,73 @@ into the {body} of the default.hbs template -->
             </div>
 
             <aside class="page-aside">
-                <section class="category">
+                <script>
+    let postMap = {}
+    let categoryName = '';
+</script>
+
+    
+        <script>
+            categoryName = 'githubpage';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'jekyll';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
+            categoryName = 'githubpage';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'jekyll';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
+            categoryName = 'githubpage';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'jekyll';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+
+<section class="category">
     <strong id="menu-wrapper" style="color:#010F42;font-size:18px;">카테고리</strong>
     <ul class="menu-list accordion">
         
@@ -139,34 +205,16 @@ into the {body} of the default.hbs template -->
             
             
             
-        <li id="menu3" class="toggle accordion-toggle" path="/category/githubpage/">
-            <span class="icon-plus"></span>
-            <a class="menu-link" href="javascript:;">Github Page</a>
-        </li>
+            <li id="menu3" class="toggle accordion-toggle" path="/category/githubpage/">
+                <span class="icon-plus"></span>
+                <a class="menu-link" href="javascript:;">Github Page <script>if(postMap['githubpage'] != undefined){document.write('('+postMap['githubpage']+')');}</script></a>
+            </li>
             
-            <ul class="menu-submenu accordion-content">
-                
-                <li><a class="head" href="/category/githubpage/jekyll/">jekyll</a></li>
-                
-            </ul>
-            
-        
-            
-
-            
-            
-            
-            
-        <li id="menu4" class="toggle accordion-toggle" path="/category/docker/">
-            <span class="icon-plus"></span>
-            <a class="menu-link" href="javascript:;">Docker</a>
-        </li>
-            
-            <ul class="menu-submenu accordion-content">
-                
-                <li><a class="head" href="/category/docker/container/">container</a></li>
-                
-            </ul>
+                <ul class="menu-submenu accordion-content">
+                    
+                        <li><a class="head" href="/category/githubpage/jekyll/">jekyll <script>if(postMap['jekyll'] != undefined){document.write('('+postMap['jekyll']+')');}</script></a></li>
+                    
+                </ul>
             
         
             
@@ -175,10 +223,28 @@ into the {body} of the default.hbs template -->
             
             
             
-        <li id="menu5" class="toggle " path="/category/etc/">
-            <span class=""></span>
-            <a class="menu-link" href="/category/etc/">이모저모</a>
-        </li>
+            <li id="menu4" class="toggle accordion-toggle" path="/category/docker/">
+                <span class="icon-plus"></span>
+                <a class="menu-link" href="javascript:;">Docker <script>if(postMap['docker'] != undefined){document.write('('+postMap['docker']+')');}</script></a>
+            </li>
+            
+                <ul class="menu-submenu accordion-content">
+                    
+                        <li><a class="head" href="/category/docker/container/">container <script>if(postMap['container'] != undefined){document.write('('+postMap['container']+')');}</script></a></li>
+                    
+                </ul>
+            
+        
+            
+
+            
+            
+            
+            
+            <li id="menu5" class="toggle " path="/category/etc/">
+                <span class=""></span>
+                <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
+            </li>
             
         
     </ul>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/common/tiger.png">
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/accordion.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/default.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+    <style>
+        p, ol, ul{
+            width: 100%;
+        }
+        blockquote{
+            width: 100%;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="site-wrapper">
+        <header class="site-header">
+
+    <div class="wrapper">
+
+        <a class="site-title" href="/">
+            <span class="site-logo">Alexander's life</span>
+            <span class="site-title">기술 블로그</span>
+        </a>
+
+        <nav class="site-nav">
+            <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+                </svg>
+            </a>
+        </nav>
+    </div>
+</header>
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <div class="page-content">
+    <div class="wrapper">
+        <section class="content-layout">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://alexonepath.github.io">
+                <div itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+                    <meta itemprop="url" content="">
+                    <meta itemprop="width" content="800">
+                    <meta itemprop="height" content="800">
+                </div>
+                <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="Alexander's Life">
+                    <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="">
+                        <meta itemprop="width" content="220">
+                        <meta itemprop="height" content="57">
+                    </div>
+                </div>
+                <header class="post-header">
+                    <h1 class="post-title" itemprop="name headline">Jekyll 테마적용</h1>
+                    <p class="post-meta"><time datetime="2018-12-18T09:00:00+09:00" itemprop="datePublished dateModified">Dec 18, 2018</time> • <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">전성종</span></span><img src="/assets/images/authors/alex.jpg" class="gravatar"></p>
+                </header>
+                <blockquote>
+  <p>Jekyll(지킬) 이란?<br /></p>
+  <ul>
+    <li>Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.</li>
+    <li>Ruby로 작성 되었으며, <a href="https://shopify.github.io/liquid/" target="_blank">Liquid</a> 템플릿 언어를 사용한다.</li>
+    <li>Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다.</li>
+    <li>해서 Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</li>
+  </ul>
+</blockquote>
+
+<h2 id="사전준비">사전준비</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mac에서 Ruby 설치</span>
+<span class="nv">$ </span>xcode-select <span class="nt">--install</span>
+<span class="nv">$ </span>brew install rbenv ruby-build
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'if which rbenv &gt; /dev/null; then eval "$(rbenv init -)"; fi'</span> <span class="o">&gt;&gt;</span> ~/.profile
+<span class="nv">$ </span><span class="nb">source</span> ~/.profile
+<span class="nv">$ </span>rbenv install 2.5.1
+<span class="nv">$ </span>rbenv global 2.5.1
+<span class="nv">$ </span>gem install bundler jekyll
+</code></pre></div></div>
+
+<h2 id="jekyll-프로젝트-생성-및-실행-접속">jekyll 프로젝트 생성 및 실행 (<a href="http://127.0.0.1:4000" target="_blank">접속</a>)</h2>
+<pre><code class="language-$xslt"># 기본 프로젝트 생성
+$ jekyll new github-page
+$ cd github-page
+
+# 실행
+$ bundle exec jekyll serve
+</code></pre>
+
+<h2 id="구조-설명">구조 설명</h2>
+<p><img src="/assets/images/post/githubpage/jekyll/jekyll-1-init-1.png" alt="Jekyll Project Structure" height="400px" /></p>
+
+<p>위의 기본 프로젝트는 _post, _site만 있을것이다.</p>
+<ul>
+  <li><strong>_categories :</strong> 카테고리 설정을 위한 *.md 파일들이 위치하는 디렉토리 (다음회에서 설명)</li>
+  <li><strong>_data :</strong> yaml, json, csv 파일들이 위치하는 디렉토리 (데이터를 저장해 놓고 호출하여 사용)</li>
+  <li><strong>_draft :</strong> 작성중인 포스트가 위치하는 디렉토리 (아직 온라인에 게시하지 않을 포스트)</li>
+  <li><strong>_includes :</strong> 재사용하기 위한 파일을 관리 {\% include file_path \%}와 같은 형식으로 포함</li>
+  <li><strong>_layouts :</strong> index.html 또는 포스트 등등의 컨텐츠를 포장하기 위해 사용.</li>
+  <li><strong>_plugins :</strong> jekyll에서 사용할 플러그인을 설치한 디렉토리</li>
+  <li><strong>_posts :</strong> 컨텐츠를 관리하는 디렉토리 (파일형식 : year-month-day-title.md)</li>
+  <li><strong>assets :</strong> css, image, js 등의 리소를 관리하는 디렉토리</li>
+  <li><strong>output :</strong> jekyll 컴파일 후 생성되는 정적 파일들이 생성되는 위치. (기본값은 _site)</li>
+  <li><strong>_config.yml :</strong> 환경설정 정보 관리</li>
+</ul>
+
+<h2 id="ide-설정하기-webstorm">IDE 설정하기 (Webstorm)</h2>
+<ul>
+  <li>사전준비 및 기본 프로젝트를 실행해 보았다.</li>
+  <li>이제 실제 사이트 구축을 위한 IDE 설정을 먼저하겠다.</li>
+  <li>Highlight 및 Reformat시 Liquid 문법이 적용되도록 하기.</li>
+</ul>
+
+<p>플러그인 설치 및 적용</p>
+<ol>
+  <li>Twig 플러그인 설치 (Settings &gt; Plugins &gt; Browser repositories &gt; Twig 검색 후 설치)</li>
+  <li>적용파일 추가 (Settings &gt; Editor &gt; File Types)
+    <ul>
+      <li>우측 (Recognized File Types) Twig 검색</li>
+      <li>Registered Patterns 아래의 2개 항목 추가</li>
+      <li>*.html, *.liquid</li>
+    </ul>
+  </li>
+</ol>
+
+
+
+                <div id="disqus_thread"></div>
+            </article>
+        </section>
+    </div>
+</div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://alexonepath.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//alexonepath.disqus.com/count.js" async></script>
+        <footer class="site-footer">
+    <div class="wrapper">
+        © Alex one path. All rights reserved. Powered by GitHub Pages.
+    </div>
+</footer>
+    </div>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/accordion.js"></script>
+</body>
+</html>

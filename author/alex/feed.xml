@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://alexonepath.github.io/author/alex/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2018-12-18T16:50:40+09:00</updated>
-  <id>https://alexonepath.github.io/author/alex/feed.xml</id>
+  <link href="http://localhost:4000/author/alex/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2018-12-18T17:40:58+09:00</updated>
+  <id>http://localhost:4000/author/alex/feed.xml</id>
 
   
   
@@ -32,84 +32,12 @@
 
   
     <entry>
-      <title type="html">Jekyll 시작하기</title>
-      <link href="https://alexonepath.github.io/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" />
-      <published>2018-12-18T09:00:00+09:00</published>
-      <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/jekyll-1-init</id>
-      <content type="html" xml:base="https://alexonepath.github.io/jekyll-1-init">&lt;blockquote&gt;
-  &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;
-    &lt;li&gt;Ruby로 작성 되었으며, &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt; 템플릿 언어를 사용한다.&lt;/li&gt;
-    &lt;li&gt;Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다.&lt;/li&gt;
-    &lt;li&gt;Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;github-page-사용이유&quot;&gt;Github Page 사용이유&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;블로그를 사용하는 것보다 markdown을 사용하여 빠르게 글을 작성할 수 있다.&lt;/li&gt;
-  &lt;li&gt;IDE에 markdown 플러그인을 설치하면 글을 작성하면서 미리보기를 할 수 있다.&lt;/li&gt;
-  &lt;li&gt;스타트업 기업의 경우 홈페이지를 운영하기 위해 따로 서버를 설치할 필요가 없음.&lt;/li&gt;
-  &lt;li&gt;국내 유명 IT 기업들이 사용하고 있어서. (^^;;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;사전준비&quot;&gt;사전준비&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Mac에서 Ruby 설치&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install rbenv ruby-build
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'if which rbenv &amp;gt; /dev/null; then eval &quot;$(rbenv init -)&quot;; fi'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.profile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.profile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv install 2.5.1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv global 2.5.1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install bundler jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;jekyll-프로젝트-생성-및-실행-접속&quot;&gt;jekyll 프로젝트 생성 및 실행 (&lt;a href=&quot;http://127.0.0.1:4000&quot; target=&quot;_blank&quot;&gt;접속&lt;/a&gt;)&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 기본 프로젝트 생성&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new github-page
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;github-page
-
-&lt;span class=&quot;c&quot;&gt;# 실행&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>전성종</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="Jekyll" />
-      
-        <category term="jekyll" />
-      
-
-      
-        <summary type="html">Jekyll(지킬) 이란? Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다. Ruby로 작성 되었으며, Liquid 템플릿 언어를 사용한다. Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다. Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
       <title type="html">Jekyll 빌드에서 배포까지</title>
-      <link href="https://alexonepath.github.io/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
+      <link href="http://localhost:4000/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/jekyll-2-theme</id>
-      <content type="html" xml:base="https://alexonepath.github.io/jekyll-2-theme">&lt;blockquote&gt;
+      <id>http://localhost:4000/jekyll-2-theme</id>
+      <content type="html" xml:base="http://localhost:4000/jekyll-2-theme">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/jekyll-1-init&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -371,6 +299,303 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
 
       
         <summary type="html">이전 포스트에서는 로컬에서 서버를 띄워서 확인하였다. 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Jekyll 카테고리 및 페이징</title>
+      <link href="http://localhost:4000/jekyll-3-category" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
+      <published>2018-12-18T09:00:00+09:00</published>
+      <updated>2018-12-18T09:00:00+09:00</updated>
+      <id>http://localhost:4000/jekyll-3-category</id>
+      <content type="html" xml:base="http://localhost:4000/jekyll-3-category">&lt;blockquote&gt;
+  &lt;p&gt;글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.&lt;br /&gt;
+글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;_cnofigyml-추가&quot;&gt;_cnofig.yml 추가&lt;/h3&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 카테고리정의 markdown 파일들이 위치할 디렉토리 이름. (프로젝트에 _categories 디렉토리 생성)&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# html 페이지 생성&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/category/:path/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 생성된 페이지의 URL 형식&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;category&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;category&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 카테고리 페이지 로딩시 사용할 Layout 페이지 (_layouts 폴더에 category.html 이용)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;카테고리-정의&quot;&gt;카테고리 정의&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2depth의 카테고리가 가능하도록 정의할 것이다.&lt;/li&gt;
+  &lt;li&gt;각 카테고리가 나타는 순서를 정의할 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/githubpage/jekyll/2018-12-18-jekyll-3-category-1.png&quot; alt=&quot;Category markdown&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;카테고리 디렉토리 구조
+    &lt;ul&gt;
+      &lt;li&gt;1depth의 카테고리는 _categories 디렉토리 아래에 생성&lt;/li&gt;
+      &lt;li&gt;2depth의 카테고리는 1depth의 파일명으로 디렉토리를 생성하고 해당 디렉토리 하위에 *.md 파일을 정의한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;카테고리 파일정의&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;&amp;lt;!-- 파일이름 githubpage.md (1Depth) --&amp;gt;
+---
+&lt;/span&gt;order: 1 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- order 필드로 카테고리를 정렬 --&amp;gt;&lt;/span&gt;
+title: Github Page &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 카테고리 이름 --&amp;gt;&lt;/span&gt;
+name: githubpage &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 포스팅의 속할 카테고리를 지정할 때 사용 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gh&quot;&gt;children: [jekyll] &amp;lt;!-- 해당 카테고리에 하위 카테고리로 정의할 카테고리 배열 --&amp;gt;
+---
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;&amp;lt;!-- 파일이름 githubpage/jekyll.md (2Depth) --&amp;gt;
+---
+&lt;/span&gt;title: Jekyll
+name: jekyll
+&lt;span class=&quot;gh&quot;&gt;isSub: true
+---
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;카테고리 트리생성 정의&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- _includes 폴더에 category.html 파일을 생성 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- {% include category.html %}와 같이 페이지에서 추가 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;category&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu-wrapper&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color:#010F42;font-size:18px;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;카테고리&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu-list accordion&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 1depth의 카테고리 정렬 --&amp;gt;&lt;/span&gt;
+        {% assign sortedCategories = (site.categories | sort: &quot;order&quot;) %}
+        {% for category in sortedCategories %}
+            {% if category.isSub %}
+                {% continue %}
+            {% endif %}
+
+            {% assign linkClass = '' %}
+            {% assign toggleClass = '' %}
+            {% assign menuUrl = category.url %}
+            {% if category.children.size &amp;gt;= 1 %}
+                {% assign menuUrl = 'javascript:;' %}
+                {% assign linkClass = 'icon-plus' %}
+                {% assign toggleClass = 'accordion-toggle' %}
+            {% endif %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu{{ forloop.index }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;toggle {{ toggleClass }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ category.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ linkClass }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ menuUrl }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ category.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            {% if category.children.size &amp;gt;= 1 %}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu-submenu accordion-content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                {% for child in category.children %}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;head&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ category.url }}{{ child }}/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ child }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+                {% endfor %}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+            {% endif %}
+        {% endfor %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;카테고리 URL 페이지의 layout&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- _layouts 폴더에 category.html 파일을 생성 --&amp;gt;&lt;/span&gt;
+---
+layout: default
+title: category
+---
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-layout&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                {% assign postCnt = 0 %}
+                {% for post in site.posts %}
+                    {% for category in post.categories %}
+                        {% if page.name == category %}
+                            {% assign postCnt = postCnt | plus: 1 %}
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;list-module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date: '%b %d %Y' }}, {{ site.data.authors[post.author].name }}
+                      &lt;span class=&quot;c&quot;&gt;&amp;lt;!--new--&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ site.data.authors[post.author].picture }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;gravatar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ post.permalink }}{{ post.url | remove_first: '/' }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+                                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-description&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.description }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+                {% if postCnt == 0 %}
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align: center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;곧 포스팅될 예정입니다.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+                {% endif %}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;페이징-정의&quot;&gt;페이징 정의&lt;/h3&gt;
+&lt;p&gt;_include 폴더에 pagenator.html 파일을 정의하였고 사용하는 페이지에서 include를 사용하여 추가.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+{% if paginator.total_pages &amp;gt; 1 %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 표시할 페이지 넘버 갯수 (홀수로 정의해야 함.) --&amp;gt;&lt;/span&gt;
+        {% assign pageNums = 5 %}
+        {% assign median = pageNums | divided_by: 2 %}
+        {% assign tempStart = paginator.page | minus: median %}
+        {% if tempStart &lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;startPage =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;startPage =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tempStart&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;tempEnd =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;paginator.page&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;divided_by:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;tempEnd&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endPage =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;startPage&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;plus:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;pageNums&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;minus:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endPage =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;paginator.page&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;plus:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;median&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endPage&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; paginator.total_pages %}
+            {% assign endPage = paginator.total_pages %}
+        {% endif %}
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-prev&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            {% if paginator.previous_page %}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ paginator.previous_page_path }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;No Previous Page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+            {% else %}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;No Previous Page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            {% endif %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+
+        {% for page in (startPage..endPage) %}
+            {% assign isActive = &quot;&quot; %}
+            {% assign href = &quot;/page&quot; | append: page %}
+            {% if page == 1 %}
+                {% assign href = {{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }} %}
+            {% endif %}
+            {% if page == paginator.page %}
+                {% assign isActive = &quot;active&quot; %}
+            {% endif %}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-number {{ isActive }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ href }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ page }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        {% endfor %}
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-next&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            {% if paginator.next_page %}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ paginator.next_page_path }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next Page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+            {% else %}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next Page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            {% endif %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+{% endif %}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>전성종</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jekyll" />
+      
+        <category term="jekyll" />
+      
+
+      
+        <summary type="html">글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다. 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Jekyll 시작하기</title>
+      <link href="http://localhost:4000/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" />
+      <published>2018-12-17T09:00:00+09:00</published>
+      <updated>2018-12-17T09:00:00+09:00</updated>
+      <id>http://localhost:4000/jekyll-1-init</id>
+      <content type="html" xml:base="http://localhost:4000/jekyll-1-init">&lt;blockquote&gt;
+  &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;
+    &lt;li&gt;Ruby로 작성 되었으며, &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt; 템플릿 언어를 사용한다.&lt;/li&gt;
+    &lt;li&gt;Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다.&lt;/li&gt;
+    &lt;li&gt;Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;github-page-사용이유&quot;&gt;Github Page 사용이유&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;블로그를 사용하는 것보다 markdown을 사용하여 빠르게 글을 작성할 수 있다.&lt;/li&gt;
+  &lt;li&gt;IDE에 markdown 플러그인을 설치하면 글을 작성하면서 미리보기를 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;스타트업 기업의 경우 홈페이지를 운영하기 위해 따로 서버를 설치할 필요가 없음.&lt;/li&gt;
+  &lt;li&gt;국내 유명 IT 기업들이 사용하고 있어서. (^^;;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사전준비&quot;&gt;사전준비&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Mac에서 Ruby 설치&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install rbenv ruby-build
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'if which rbenv &amp;gt; /dev/null; then eval &quot;$(rbenv init -)&quot;; fi'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.profile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.profile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv install 2.5.1
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv global 2.5.1
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jekyll-프로젝트-생성-및-실행-접속&quot;&gt;jekyll 프로젝트 생성 및 실행 (&lt;a href=&quot;http://127.0.0.1:4000&quot; target=&quot;_blank&quot;&gt;접속&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 기본 프로젝트 생성&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new github-page
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;github-page
+
+&lt;span class=&quot;c&quot;&gt;# 실행&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>전성종</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jekyll" />
+      
+        <category term="jekyll" />
+      
+
+      
+        <summary type="html">Jekyll(지킬) 이란? Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다. Ruby로 작성 되었으며, Liquid 템플릿 언어를 사용한다. Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다. Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</summary>
       
 
       

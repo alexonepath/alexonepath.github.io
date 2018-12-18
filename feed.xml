@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://alexonepath.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexonepath.github.io/" rel="alternate" type="text/html" /><updated>2018-12-18T16:31:36+09:00</updated><id>https://alexonepath.github.io/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">Jekyll 빌드에서 배포까지</title><link href="https://alexonepath.github.io/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>https://alexonepath.github.io/jekyll-2-theme</id><content type="html" xml:base="https://alexonepath.github.io/jekyll-2-theme">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-18T16:43:22+09:00</updated><id>http://localhost:4000/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">Jekyll 빌드에서 배포까지</title><link href="http://localhost:4000/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>http://localhost:4000/jekyll-2-theme</id><content type="html" xml:base="http://localhost:4000/jekyll-2-theme">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/jekyll-1-init&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -49,6 +49,11 @@
   &lt;li&gt;&lt;strong&gt;output :&lt;/strong&gt; jekyll 컴파일 후 생성되는 정적 파일들이 생성되는 위치. (기본값은 _site)&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;_config.yml :&lt;/strong&gt; 환경설정 정보 관리&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;git-서브모듈-추가&quot;&gt;Git 서브모듈 추가&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Github Page 저장소를 현재 저장소의 output 폴더에 서브모듈로 추가한다. (삭제는 좀 번거로움)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git submodule add https://github.com/alexonepath/alexonepath.github.io.git output
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;ide-설정하기-webstorm&quot;&gt;IDE 설정하기 (Webstorm)&lt;/h3&gt;
 &lt;ul&gt;
@@ -154,7 +159,8 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
 &lt;span class=&quot;no&quot;&gt;SOURCE_BRANCH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;branch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;no&quot;&gt;DESTINATION_BRANCH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;master&quot;&lt;/span&gt;
 &lt;span class=&quot;no&quot;&gt;CNAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CNAME&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;GIT_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:alexonepath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alexonepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;git&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 이부분을 본인의 Github Page Repository URL 변경&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;GIT_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git@github.com:alexonepath/alexonepath.github.io.git&quot;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check_destination&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exist?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;destination&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -219,15 +225,34 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">이전 포스트에서는 로컬에서 서버를 띄워서 확인하였다. 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.</summary></entry><entry><title type="html">Jekyll 시작하기</title><link href="https://alexonepath.github.io/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>https://alexonepath.github.io/jekyll-1-init</id><content type="html" xml:base="https://alexonepath.github.io/jekyll-1-init">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Makefile&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+	git submodule update &lt;span class=&quot;nt&quot;&gt;--init&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--remote&lt;/span&gt;
+	bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;rake site:deploy &lt;span class=&quot;nt&quot;&gt;--quiet&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Done publishing.&quot;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://alexonepath.github.io/&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;배포&quot;&gt;배포&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make publish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">이전 포스트에서는 로컬에서 서버를 띄워서 확인하였다. 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.</summary></entry><entry><title type="html">Jekyll 시작하기</title><link href="http://localhost:4000/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>http://localhost:4000/jekyll-1-init</id><content type="html" xml:base="http://localhost:4000/jekyll-1-init">&lt;blockquote&gt;
   &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;
     &lt;li&gt;Ruby로 작성 되었으며, &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt; 템플릿 언어를 사용한다.&lt;/li&gt;
     &lt;li&gt;Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다.&lt;/li&gt;
-    &lt;li&gt;해서 Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.&lt;/li&gt;
+    &lt;li&gt;Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
+
+&lt;h3 id=&quot;github-page-사용이유&quot;&gt;Github Page 사용이유&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;블로그를 사용하는 것보다 markdown을 사용하여 빠르게 글을 작성할 수 있다.&lt;/li&gt;
+  &lt;li&gt;IDE에 markdown 플러그인을 설치하면 글을 작성하면서 미리보기를 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;스타트업 기업의 경우 홈페이지를 운영하기 위해 따로 서버를 설치할 필요가 없음.&lt;/li&gt;
+  &lt;li&gt;국내 유명 IT 기업들이 사용하고 있어서. (^^;;)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;사전준비&quot;&gt;사전준비&lt;/h3&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Mac에서 Ruby 설치&lt;/span&gt;
@@ -247,4 +272,4 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
 
 &lt;span class=&quot;c&quot;&gt;# 실행&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">Jekyll(지킬) 이란? Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다. Ruby로 작성 되었으며, Liquid 템플릿 언어를 사용한다. Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다. 해서 Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">Jekyll(지킬) 이란? Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다. Ruby로 작성 되었으며, Liquid 템플릿 언어를 사용한다. Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다. Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</summary></entry></feed>

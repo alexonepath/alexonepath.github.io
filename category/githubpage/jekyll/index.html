@@ -29,7 +29,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/assets/built/layout.css" />
 <link rel="stylesheet" type="text/css" href="/assets/built/accordion.css" />
-<link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+{#<link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />#}
 
 <!-- Custom Styles -->
 <style></style>
@@ -236,29 +236,10 @@
     </div>
 
 </header>
-<div class="page-content">
-    <div class="wrapper">
-        <!--<div class="visual"></div>-->
-
-        <div class="main-banner">
-            <div class="bg-item"></div>
-            <div class="bg-item"></div>
-            <div class="bg-item"></div>
-            <div class="dimmed">
-                <div class="content-layout">
-                    <div class="description">
-                        <span class="text">Alexander's life</span>
-                        <p class="text">
-                            자동화, 유연함, 통합<br>
-                            개발자에게 자유를 선사하라!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="content-layout">
-            <div class="list">
+<div class="page">
+    <div class="page__content">
+        <section class="blog single">
+            <div class="wrap">
                 
                 
                     
@@ -266,16 +247,16 @@
                     
                         
                             
-                            <div class="list-module">
-                  <span class="post-meta">Dec 18 2018, 전성종
-                      <!--new-->
-                    <img src="/assets/images/authors/alex.jpg" class="gravatar">
-                  </span>
-                                <a href="/jekyll-3-category">
-                                    <h2 class="post-link">Jekyll 카테고리 및 페이징</h2>
-                                    <p class="post-description">카테고리 적용 및 페이징 처리</p>
-                                </a>
-                            </div>
+                            <article class="blog-post">
+                                <div class="blog-post__header">
+                                    <h2 class="blog-post__title"><a href="/jekyll-3-category">Jekyll 카테고리 및 페이징</a></h2>
+                                    <p class="blog-post__subtitle">Dec 18, 2018</p>
+                                </div>
+
+                                <div class="blog-post__content">
+                                    <p>카테고리 적용 및 페이징 처리</p>
+                                </div>
+                            </article>
                         
                     
                 
@@ -284,16 +265,16 @@
                     
                         
                             
-                            <div class="list-module">
-                  <span class="post-meta">Dec 18 2018, 전성종
-                      <!--new-->
-                    <img src="/assets/images/authors/alex.jpg" class="gravatar">
-                  </span>
-                                <a href="/jekyll-2-theme">
-                                    <h2 class="post-link">Jekyll 빌드에서 배포까지</h2>
-                                    <p class="post-description">jasper2 테마 적용후 빌드 및 배포</p>
-                                </a>
-                            </div>
+                            <article class="blog-post">
+                                <div class="blog-post__header">
+                                    <h2 class="blog-post__title"><a href="/jekyll-2-theme">Jekyll 빌드에서 배포까지</a></h2>
+                                    <p class="blog-post__subtitle">Dec 18, 2018</p>
+                                </div>
+
+                                <div class="blog-post__content">
+                                    <p>jasper2 테마 적용후 빌드 및 배포</p>
+                                </div>
+                            </article>
                         
                     
                 
@@ -302,176 +283,25 @@
                     
                         
                             
-                            <div class="list-module">
-                  <span class="post-meta">Dec 17 2018, 전성종
-                      <!--new-->
-                    <img src="/assets/images/authors/alex.jpg" class="gravatar">
-                  </span>
-                                <a href="/jekyll-1-init">
-                                    <h2 class="post-link">Jekyll 시작하기</h2>
-                                    <p class="post-description">Jekyll을 이용한 Github Page 활용방법</p>
-                                </a>
-                            </div>
+                            <article class="blog-post">
+                                <div class="blog-post__header">
+                                    <h2 class="blog-post__title"><a href="/jekyll-1-init">Jekyll 시작하기</a></h2>
+                                    <p class="blog-post__subtitle">Dec 17, 2018</p>
+                                </div>
+
+                                <div class="blog-post__content">
+                                    <p>Jekyll을 이용한 Github Page 활용방법</p>
+                                </div>
+                            </article>
                         
                     
                 
 
+                
+
+                <!--Page Navigation-->
                 
             </div>
-
-            <aside class="page-aside">
-                <script>
-    let postMap = {}
-    let categoryName = '';
-</script>
-
-    
-        <script>
-            categoryName = 'githubpage';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-        <script>
-            categoryName = 'jekyll';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-
-    
-        <script>
-            categoryName = 'githubpage';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-        <script>
-            categoryName = 'jekyll';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-
-    
-        <script>
-            categoryName = 'githubpage';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-        <script>
-            categoryName = 'jekyll';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-
-
-<section class="category">
-    <strong id="menu-wrapper" style="color:#010F42;font-size:18px;">카테고리</strong>
-    <ul class="menu-list accordion">
-        
-        
-            
-                
-            
-                
-            
-
-            
-            
-            
-            
-            <li id="menu3" class="toggle accordion-toggle" path="/category/githubpage/">
-                <span class="icon-plus"></span>
-                <a class="menu-link" href="javascript:;">Github Page <script>if(postMap['githubpage'] != undefined){document.write('('+postMap['githubpage']+')');}</script></a>
-            </li>
-            
-                <ul class="menu-submenu accordion-content">
-                    
-                        <li><a class="head" href="/category/githubpage/jekyll/">jekyll <script>if(postMap['jekyll'] != undefined){document.write('('+postMap['jekyll']+')');}</script></a></li>
-                    
-                </ul>
-            
-        
-            
-
-            
-            
-            
-            
-            <li id="menu4" class="toggle accordion-toggle" path="/category/docker/">
-                <span class="icon-plus"></span>
-                <a class="menu-link" href="javascript:;">Docker <script>if(postMap['docker'] != undefined){document.write('('+postMap['docker']+')');}</script></a>
-            </li>
-            
-                <ul class="menu-submenu accordion-content">
-                    
-                        <li><a class="head" href="/category/docker/container/">container <script>if(postMap['container'] != undefined){document.write('('+postMap['container']+')');}</script></a></li>
-                    
-                </ul>
-            
-        
-            
-
-            
-            
-            
-            
-            <li id="menu5" class="toggle " path="/category/etc/">
-                <span class=""></span>
-                <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
-            </li>
-            
-        
-    </ul>
-</section>
-
-
-                <section class="recent-posts">
-    <strong style="color:#010F42;font-size:18px;">최근 포스팅</strong>
-    <ul>
-        
-        <li><a class="head" href="/jekyll-3-category">Jekyll 카테고리 및 페이징</a></li>
-        
-        <li><a class="head" href="/jekyll-2-theme">Jekyll 빌드에서 배포까지</a></li>
-        
-        <li><a class="head" href="/jekyll-1-init">Jekyll 시작하기</a></li>
-        
-        <!--<li><a href="/woowabros/2018/12/05/developer-relations2.html">
-            - 우아한 Developer Relations 두번째 이야기
-        </a></li>
-
-        <li><a href="/r-d/2018/12/01/performance_insight.html">
-            - Performance Insight 써도 돼요?
-        </a></li>
-
-        <li><a href="/experience/2018/11/29/pilot-project-minzy.html">
-            - 우아한 파일럿 프로젝트 2기(feat.고독한개발자)
-        </a></li>-->
-
-    </ul>
-</section>
-            </aside>
         </section>
     </div>
 </div>

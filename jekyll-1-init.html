@@ -29,7 +29,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/assets/built/layout.css" />
 <link rel="stylesheet" type="text/css" href="/assets/built/accordion.css" />
-<link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+{#<link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />#}
 
 <!-- Custom Styles -->
 <style></style>
@@ -236,28 +236,17 @@
     </div>
 
 </header>
-<div class="page-content">
-    <div class="wrapper">
-        <section class="content-layout">
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://alexonepath.github.io">
-                <div itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
-                    <meta itemprop="url" content="">
-                    <meta itemprop="width" content="800">
-                    <meta itemprop="height" content="800">
-                </div>
-                <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
-                    <meta itemprop="name" content="Alexander's Life">
-                    <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
-                        <meta itemprop="url" content="">
-                        <meta itemprop="width" content="220">
-                        <meta itemprop="height" content="57">
-                    </div>
-                </div>
-                <header class="post-header">
-                    <h1 class="post-title" itemprop="name headline">Jekyll 시작하기</h1>
-                    <p class="post-meta"><time datetime="2018-12-17T09:00:00+09:00" itemprop="datePublished dateModified">Dec 17, 2018</time> • <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">전성종</span></span><img src="/assets/images/authors/alex.jpg" class="gravatar"></p>
-                </header>
+<div class="page">
+    <div class="page__content" data-page-title="Jekyll 시작하기">
+        <section class="intro">
+            <div class="wrap">
+                <h1>Jekyll 시작하기</h1>
+                <p>Dec 17, 2018</p>
+            </div>
+        </section>
+
+        <section class="single post-content">
+            <div class="wrap">
                 <blockquote>
   <p>Jekyll(지킬) 이란?<br /></p>
   <ul>
@@ -297,12 +286,13 @@
 </code></pre></div></div>
 
 
+            </div>
 
-                <div id="disqus_thread"></div>
-            </article>
+            <div id="disqus_thread"></div>
         </section>
     </div>
 </div>
+
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

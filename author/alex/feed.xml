@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="http://localhost:4000/author/alex/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2018-12-19T12:22:16+09:00</updated>
-  <id>http://localhost:4000/author/alex/feed.xml</id>
+  <link href="https://alexonepath.github.io/author/alex/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
+  <updated>2018-12-19T12:23:04+09:00</updated>
+  <id>https://alexonepath.github.io/author/alex/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">Jekyll 빌드에서 배포까지</title>
-      <link href="http://localhost:4000/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
+      <link href="https://alexonepath.github.io/jekyll-2-theme" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>http://localhost:4000/jekyll-2-theme</id>
-      <content type="html" xml:base="http://localhost:4000/jekyll-2-theme">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/jekyll-2-theme</id>
+      <content type="html" xml:base="https://alexonepath.github.io/jekyll-2-theme">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/jekyll-1-init&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -307,11 +307,11 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
   
     <entry>
       <title type="html">Jekyll 카테고리 및 페이징</title>
-      <link href="http://localhost:4000/jekyll-3-category" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
+      <link href="https://alexonepath.github.io/jekyll-3-category" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>http://localhost:4000/jekyll-3-category</id>
-      <content type="html" xml:base="http://localhost:4000/jekyll-3-category">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/jekyll-3-category</id>
+      <content type="html" xml:base="https://alexonepath.github.io/jekyll-3-category">&lt;blockquote&gt;
   &lt;p&gt;글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.&lt;br /&gt;
 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -532,11 +532,11 @@ title: category
   
     <entry>
       <title type="html">Jekyll 시작하기</title>
-      <link href="http://localhost:4000/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" />
+      <link href="https://alexonepath.github.io/jekyll-1-init" rel="alternate" type="text/html" title="Jekyll 시작하기" />
       <published>2018-12-17T09:00:00+09:00</published>
       <updated>2018-12-17T09:00:00+09:00</updated>
-      <id>http://localhost:4000/jekyll-1-init</id>
-      <content type="html" xml:base="http://localhost:4000/jekyll-1-init">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/jekyll-1-init</id>
+      <content type="html" xml:base="https://alexonepath.github.io/jekyll-1-init">&lt;blockquote&gt;
   &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;

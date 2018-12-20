@@ -82,6 +82,26 @@
 
     
         <script>
+            categoryName = 'docker';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'guide';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
             categoryName = 'githubpage';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -149,12 +169,14 @@
     
         
     
+        
+    
 
     
     
     
     
-    <li id="menu3" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
+    <li id="menu4" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Github Page <script>if(postMap['githubpage'] != undefined){document.write('('+postMap['githubpage']+')');}</script></a>
     </li>
@@ -172,12 +194,14 @@
     
     
     
-    <li id="menu4" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
+    <li id="menu5" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Docker <script>if(postMap['docker'] != undefined){document.write('('+postMap['docker']+')');}</script></a>
     </li>
     
         <ul class="menu-submenu accordion-content">
+            
+                <li><a class="head menu__list__item" href="/category/docker/guide/">guide <script>if(postMap['guide'] != undefined){document.write('('+postMap['guide']+')');}</script></a></li>
             
                 <li><a class="head menu__list__item" href="/category/docker/container/">container <script>if(postMap['container'] != undefined){document.write('('+postMap['container']+')');}</script></a></li>
             
@@ -190,7 +214,7 @@
     
     
     
-    <li id="menu5" class="toggle menu__list__item " path="/category/etc/">
+    <li id="menu6" class="toggle menu__list__item " path="/category/etc/">
         <span class=""></span>
         <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
     </li>
@@ -280,6 +304,12 @@
                                     <p>사이트에 GA 적용방법을 알아본다.</p>
                                 </div>
                             </article>
+                        
+                    
+                
+                    
+                        
+                    
                         
                     
                 

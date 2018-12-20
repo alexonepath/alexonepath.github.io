@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://alexonepath.github.io/author/alex/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2018-12-20T17:14:36+09:00</updated>
-  <id>https://alexonepath.github.io/author/alex/feed.xml</id>
+  <link href="http://localhost:4000/author/alex/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2018-12-20T17:44:23+09:00</updated>
+  <id>http://localhost:4000/author/alex/feed.xml</id>
 
   
   
@@ -32,12 +32,83 @@
 
   
     <entry>
-      <title type="html">GA 적용</title>
-      <link href="https://alexonepath.github.io/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용" />
+      <title type="html">Docker 기본개념</title>
+      <link href="http://localhost:4000/category/docker/guide/guide-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" />
       <published>2018-12-20T09:00:00+09:00</published>
       <updated>2018-12-20T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/etc/etc-ga</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-ga.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/docker/guide/guide-basic</id>
+      <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-basic.html">&lt;blockquote&gt;
+  &lt;p&gt;로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다.&lt;br /&gt;
+순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;docker-기본개념&quot;&gt;Docker 기본개념&lt;/h3&gt;
+&lt;p&gt;Dockerfile을 이용하여 자신만의 image를 생성하여 Docker Hub 또는 사내 Registry를 구성하여 push한다.&lt;br /&gt;
+각 노드는 Registry로부터 이미지를 다운로드 받아서 각 격리된 컨테이너를 실행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;KUBENETES, DOCKER SWARM, APACHE MESOS 등을 이용하여 컨테이너의 배포 관리를 할 수 있다.(Container Orchestration)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;kubenetes
+    &lt;ul&gt;
+      &lt;li&gt;구글에서 개발, 가장 기능이 풍부하고 널이 사용됨 (컨테이너 순차배포 가능)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;docker swarm
+    &lt;ul&gt;
+      &lt;li&gt;여러개의 클러스링하여 하나의 큰 리소스 풀을 생성한다.&lt;/li&gt;
+      &lt;li&gt;각 컨테이너 실행시 사용하는 리소스(CPU, MEMORY) 등을 정의하면 자원이 남는 호스트에서 실행된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;apache mesos
+    &lt;ul&gt;
+      &lt;li&gt;수만 대의 물리적 시스템으로 확장할 수 있도록 설계됨.&lt;/li&gt;
+      &lt;li&gt;여러개의 호스트를 클러스링하여 컨테이너 실행시 사용하는 리소스(CPU, MEMORY) 등을 정의하면 자원이 남는 호스트에서 실행된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-가입폼-작성&quot;&gt;1. 가입폼 작성&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/etc/2018-12-20-etc-ga/ga-register-form.png&quot; alt=&quot;Form&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-추적-id-및-태그&quot;&gt;2. 추적 ID 및 태그&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/etc/2018-12-20-etc-ga/ga-tracking.png&quot; alt=&quot;Get tracking id&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;일반 사이트의 경우는 범용 사이트 태그를 복사하여 head 태그 사이에 넣는다.&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>전성종</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="docker" />
+      
+
+      
+        <summary type="html">로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다. 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">GA 적용</title>
+      <link href="http://localhost:4000/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용" />
+      <published>2018-12-20T09:00:00+09:00</published>
+      <updated>2018-12-20T09:00:00+09:00</updated>
+      <id>http://localhost:4000/category/etc/etc-ga</id>
+      <content type="html" xml:base="http://localhost:4000/category/etc/etc-ga.html">&lt;blockquote&gt;
   &lt;p&gt;Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다.&lt;br /&gt;
 페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -84,11 +155,11 @@
   
     <entry>
       <title type="html">Jekyll 빌드에서 배포까지</title>
-      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
+      <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme</id>
+      <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/category/githubpage/jekyll/jekyll-1-init.html&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -358,11 +429,11 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
   
     <entry>
       <title type="html">Jekyll 카테고리 및 페이징</title>
-      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
+      <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/githubpage/jekyll/jekyll-3-category</id>
+      <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
   &lt;p&gt;글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.&lt;br /&gt;
 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -583,11 +654,11 @@ title: category
   
     <entry>
       <title type="html">Jekyll 시작하기</title>
-      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html" rel="alternate" type="text/html" title="Jekyll 시작하기" />
+      <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html" rel="alternate" type="text/html" title="Jekyll 시작하기" />
       <published>2018-12-17T09:00:00+09:00</published>
       <updated>2018-12-17T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/githubpage/jekyll/jekyll-1-init</id>
+      <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html">&lt;blockquote&gt;
   &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;

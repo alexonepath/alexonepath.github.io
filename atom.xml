@@ -4,7 +4,25 @@
     <title> - Articles</title>
     <description>About alexander</description>
     <link>
-    https://alexonepath.github.io</link>
+    http://localhost:4000</link>
+    
+      
+      <item>
+        <title>GA 적용</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다.&lt;br /&gt;
+페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/category/etc/etc-ga.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/etc/etc-ga.html</guid>
+      </item>
+      
     
       
       <item>
@@ -19,8 +37,8 @@
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</guid>
       </item>
       
     
@@ -37,8 +55,8 @@
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</guid>
       </item>
       
     
@@ -60,8 +78,8 @@
         
         <pubDate>Mon, 17 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</guid>
       </item>
       
     

@@ -62,6 +62,17 @@
 
     
         <script>
+            categoryName = 'etc';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
             categoryName = 'githubpage';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -245,6 +256,17 @@
     <div class="page__content">
         <section class="blog single">
             <div class="wrap">
+                
+                    <article class="blog-post">
+                        <div class="blog-post__header">
+                            <h2 class="blog-post__title"><a href="/category/etc/etc-ga.html">GA 적용</a></h2>
+                            <p class="blog-post__subtitle">Dec 20, 2018</p>
+                        </div>
+
+                        <div class="blog-post__content">
+                            <p>사이트에 GA 적용방법을 알아본다.</p>
+                        </div>
+                    </article>
                 
                     <article class="blog-post">
                         <div class="blog-post__header">

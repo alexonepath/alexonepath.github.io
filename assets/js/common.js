@@ -1,3 +1,8 @@
+require('../css/font.css')
+require('../css/svg.css')
+require('../css/accordion.css')
+require('../css/layout.css')
+
 if (!String.prototype.format) {
     String.prototype.format = function () {
         var args = arguments;

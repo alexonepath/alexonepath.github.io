@@ -26,6 +26,37 @@
     
       
       <item>
+        <title>Docker Compose</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;Docker Compose에 대한 설명과 사용법에 대해서 알아본다.&lt;br /&gt;
+Docker Compose 란?&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;여러개의 컨테이너를 실행하기 위해 정의되는 툴이다.&lt;/li&gt;
+    &lt;li&gt;YAML 파일을 이용하여 각 컨테이너를 정의한다.&lt;/li&gt;
+    &lt;li&gt;단일 커맨드를 이용하여 정의한 compose 파일의 서비스들을 실행하거나 중지할 수 있다.&lt;/li&gt;
+    &lt;li&gt;어플리케이션의 생명주기를 관리하기 위해 아래와 같은 기능을 제공한다.
+      &lt;ul&gt;
+        &lt;li&gt;start, stop, rebuild&lt;/li&gt;
+        &lt;li&gt;실행중인 서비스들의 상태 확인&lt;/li&gt;
+        &lt;li&gt;실행중인 서비스들의 로그 확인&lt;/li&gt;
+        &lt;li&gt;서비스에서 일회성 명령실행&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/category/docker/guide/guide-compose.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-compose.html</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Docker 기본개념</title>
         
           <description>&lt;blockquote&gt;

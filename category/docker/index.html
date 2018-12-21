@@ -102,6 +102,26 @@
 
     
         <script>
+            categoryName = 'docker';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'guide';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
             categoryName = 'githubpage';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -300,12 +320,30 @@
                             
                             <article class="blog-post">
                                 <div class="blog-post__header">
+                                    <h2 class="blog-post__title"><a href="/category/docker/guide/guide-compose.html">Docker Compose</a></h2>
+                                    <p class="blog-post__subtitle">Dec 20, 2018</p>
+                                </div>
+
+                                <div class="blog-post__content">
+                                    <p>Docker Compose에 대해 설명한다.</p>
+                                </div>
+                            </article>
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                            
+                            <article class="blog-post">
+                                <div class="blog-post__header">
                                     <h2 class="blog-post__title"><a href="/category/docker/guide/guide-basic.html">Docker 기본개념</a></h2>
                                     <p class="blog-post__subtitle">Dec 20, 2018</p>
                                 </div>
 
                                 <div class="blog-post__content">
-                                    <p>Docker의 기본 개념에 대해서 설명한다.</p>
+                                    <p>Docker의 기본 개념에 대해 설명한다.</p>
                                 </div>
                             </article>
                         

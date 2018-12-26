@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/docker/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2018-12-26T18:25:27+09:00</updated>
+  <updated>2018-12-26T18:28:34+09:00</updated>
   <id>http://localhost:4000/tag/docker/feed.xml</id>
 
   
@@ -382,7 +382,7 @@ seongjongjeon/webdav:1.0
   &lt;li&gt;메뉴(이동) &amp;gt; 서버에 연결 &amp;gt; http://도메인:port/webdav&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;transmission-httpsgithubcomlindvalltransmission-seqblobmasterrunsh-비밀번호&quot;&gt;Transmission (https://github.com/lindvall/transmission-seq/blob/master/run.sh 비밀번호)&lt;/h3&gt;
+&lt;h3 id=&quot;transmission-토렌트&quot;&gt;Transmission (토렌트)&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM linuxserver/transmission:95
 MAINTAINER alexonepath@gmail.com
@@ -400,7 +400,7 @@ CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&g
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-username&quot;: &quot;&quot;/&quot;rpc-username&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-password&quot;: &quot;.*&quot;/&quot;rpc-password&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
-	&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
+    &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -416,13 +416,27 @@ CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&g
 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/transmission/config:/config &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/transmission/download:/downloads &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/transmission/watch:/watch &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TZ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Asia/Seoul &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20001:9091 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 51413:51413 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 51413:51413/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TZ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Asia/Seoul &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_NAME &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_PWD &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 seongjongjeon/transmission:95
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;plex-동영상-스트리밍-서버&quot;&gt;Plex (동영상 스트리밍 서버)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;컨테이너 실행&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; alex-plex &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;host &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /etc/localtime:/etc/localtime:ro &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/plex/config:/config &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/plex/transcode:/transcode &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker_repository/transmission/download/complete:/data &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TZ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Asia/Seoul&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;PLEX_CLAIM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;claim-y3TnhqNp6ghCJaqgbxEC&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+plexinc/pms-docker
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       

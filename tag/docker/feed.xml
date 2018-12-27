@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://alexonepath.github.io/tag/docker/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2018-12-27T16:34:58+09:00</updated>
-  <id>https://alexonepath.github.io/tag/docker/feed.xml</id>
+  <link href="http://localhost:4000/tag/docker/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2018-12-27T16:37:06+09:00</updated>
+  <id>http://localhost:4000/tag/docker/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">Docker Compose</title>
-      <link href="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" />
+      <link href="http://localhost:4000/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" />
       <published>2018-12-21T09:00:00+09:00</published>
       <updated>2018-12-21T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/docker/guide/guide-3-compose</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/docker/guide/guide-3-compose</id>
+      <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
   &lt;p&gt;Docker Compose에 대한 설명과 사용법에 대해서 알아본다.&lt;br /&gt;
 Docker Compose 란?&lt;/p&gt;
   &lt;ul&gt;
@@ -132,11 +132,11 @@ Docker Compose 란?&lt;/p&gt;
   
     <entry>
       <title type="html">Docker Network</title>
-      <link href="https://alexonepath.github.io/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html" title="Docker Network" />
+      <link href="http://localhost:4000/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html" title="Docker Network" />
       <published>2018-12-21T09:00:00+09:00</published>
       <updated>2018-12-21T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/docker/guide/guide-2-network</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/docker/guide/guide-2-network</id>
+      <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
   &lt;p&gt;Docker에서 컨네이너가 사용하는 네트워크 방식에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -247,12 +247,333 @@ docker service create &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; myser
     </entry>
   
     <entry>
+      <title type="html">Docker를 이용하여 홈서버 구축</title>
+      <link href="http://localhost:4000/category/docker/guide/container-1-home.html" rel="alternate" type="text/html" title="Docker를 이용하여 홈서버 구축" />
+      <published>2018-12-21T09:00:00+09:00</published>
+      <updated>2018-12-21T09:00:00+09:00</updated>
+      <id>http://localhost:4000/category/docker/guide/container-1-home</id>
+      <content type="html" xml:base="http://localhost:4000/category/docker/guide/container-1-home.html">&lt;blockquote&gt;
+  &lt;p&gt;Docker를 이용하여 아래의 환경들을 구축할 것이다.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.)&lt;/li&gt;
+    &lt;li&gt;Transmission : 토렌트&lt;/li&gt;
+    &lt;li&gt;Plex : 동영상 스트리밍 서버&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;webdav&quot;&gt;WebDAV&lt;/h3&gt;
+&lt;p&gt;nginx를 이용하여 webdav 서버를 실행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM ubuntu:18.04
+MAINTAINER alexonepath@gmail.com
+
+ENV USERNAME &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+ENV USERPWD &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+
+RUN apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; nginx nginx-extras apache2-utils
+
+RUN &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'server {\n\
+listen 80 default_server;\n\
+listen [::]:80 default_server;\n\
+charset utf-8;\n\
+location /webdav {\n\
+alias /var/webdav;\n\
+dav_methods     PUT DELETE MKCOL COPY MOVE;\n\
+dav_ext_methods   PROPFIND OPTIONS;\n\
+create_full_put_path  on;\n\
+dav_access    user:rw group:rw all:rw;\n\
+autoindex     on;\n\
+auth_basic &quot;restricted&quot;;\n\
+auth_basic_user_file /etc/nginx/users.pass;\n\
+send_timeout  36000s;\n\
+proxy_connect_timeout  36000s;\n\
+proxy_read_timeout  36000s;\n\
+proxy_send_timeout  36000s;\n\
+proxy_request_buffering off;\n\
+}}\n'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;  /etc/nginx/sites-available/webdav
+
+RUN ln &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /etc/nginx/sites-available/webdav /etc/nginx/sites-enabled/webdav
+RUN rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /etc/nginx/sites-enabled/default
+
+RUN mkdir &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /var/webdav
+RUN chown www-data /var/webdav &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 777 /var/webdav
+
+COPY entrypoint.sh /
+RUN chmod +x entrypoint.sh
+
+CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nginx &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;daemon off;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;entrypoint.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERPWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;htpasswd &lt;span class=&quot;nt&quot;&gt;-bc&lt;/span&gt; /etc/nginx/users.pass &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERPWD&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;이미지 빌드 및 push&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nt&quot;&gt;--tag&lt;/span&gt; seongjongjeon/webdav:1.0 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker login
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker push seongjongjeon/webdav:1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;컨테이너 실행&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# volume 매핑을 위한 디렉토리 생성&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /data/repositories/docker-repository/webdav &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod 777 /data/repositories/docker-repository/webdav
+
+&lt;span class=&quot;c&quot;&gt;###################&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1. 실행시 사용자 생성&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;###################&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; alex-webdav &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20000:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /etc/localtime:/etc/localtime:ro &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/webdav:/var/webdav &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_NAME &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_PWD &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+seongjongjeon/webdav:1.0
+
+&lt;span class=&quot;c&quot;&gt;#####################&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 2. 생성된 사용자 파일 매핑&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# USERNAME과 USERPWD 환경 변수가 없다면 users.pass 파일을 매핑해야 한다.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#####################&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 사용자 생성하기&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;htpasswd &lt;span class=&quot;nt&quot;&gt;-bc&lt;/span&gt; users.passwd YOUR_NAME YOUR_PWD
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;htpasswd &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; users.passwd YOUR_NAME YOUR_PWD
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; alex-webdav &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20000:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /etc/localtime:/etc/localtime:ro &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/webdav:/var/webdav &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;YOUR_PASSWD_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/etc/nginx/users.pass &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+seongjongjeon/webdav:1.0
+
+&lt;span class=&quot;c&quot;&gt;# 실행중인 webdav에 사용자 추가&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CONTAINER_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; htpasswd &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; /etc/nginx/users.pass YOUR_NAME YOUR_PWD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Mac 연결&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Finder 선택&lt;/li&gt;
+  &lt;li&gt;메뉴(이동) &amp;gt; 서버에 연결 &amp;gt; http://도메인:port/webdav&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;transmission-토렌트&quot;&gt;Transmission (토렌트)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM linuxserver/transmission:95
+MAINTAINER alexonepath@gmail.com
+
+COPY entrypoint.sh /
+RUN chmod +x entrypoint.sh
+RUN rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /etc/services.d/transmission
+CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; /usr/bin/transmission-daemon &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; /config &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; /watch &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;entrypoint.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERPWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
+    sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-username&quot;: &quot;&quot;/&quot;rpc-username&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
+    sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-password&quot;: &quot;.*&quot;/&quot;rpc-password&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
+    &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;이미지 빌드 및 push&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nt&quot;&gt;--tag&lt;/span&gt; seongjongjeon/transmission:95 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker push seongjongjeon/transmission:95
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;컨테이너 실행&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; alex-transmission &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /etc/localtime:/etc/localtime:ro &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/transmission/config:/config &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/transmission/download:/downloads &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/transmission/watch:/watch &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20001:9091 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 51413:51413 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 51413:51413/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TZ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Asia/Seoul &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_NAME &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_PWD &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+seongjongjeon/transmission:95
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;plex-동영상-스트리밍-서버&quot;&gt;Plex (동영상 스트리밍 서버)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.plex.tv/claim&quot; target=&quot;_blank&quot;&gt;Obtain Claim token&lt;/a&gt; : plex 계정에 자동 로그인을 위한 토큰&lt;br /&gt;
+&lt;strong&gt;컨테이너 실행 (접속 http://IP:20010)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# /data는 transmission의 다운로드 폴더로 지정해 준다. &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; alex-plex &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20010:32400/tcp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20011:3005/tcp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20012:8324/tcp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20013:32469/tcp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20014:1900/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20015:32410/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20026:32412/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20027:32413/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 20028:32414/udp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /etc/localtime:/etc/localtime:ro &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/plex/config:/config &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/plex/transcode:/transcode &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /data/repositories/docker-repository/transmission/download/complete:/data &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TZ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Asia/Seoul&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;PLEX_CLAIM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR_PLEX_CLAIM &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+plexinc/pms-docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;영화 및 드라마 정보 Metadata Agent&lt;/strong&gt;&lt;br /&gt;
+영화 및 드라마에 대한 메타정보를 받아온다. &lt;a href=&quot;https://github.com/hojel/DaumMovie.bundle&quot; target=&quot;_blank&quot;&gt;다운로드&lt;/a&gt;&lt;br /&gt;
+플러그인 적용&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# plugins 디렉토리로 이동&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/data/repositories/docker-repository/plex/config/Library/Application Support/Plex Media Server/Plug-ins&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Checkout&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 플러그인 설치후 재시작 해야 함.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/hojel/DaumMovie.bundle.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;메인 화면의 라이브러리 추가 버튼클릭 (영화 또는 드라마가 등이 존재하는 폴더를 추가한다.)
+&lt;img src=&quot;/assets/images/post/docker/container/2018-12-28-container-1-home/add_library.png&quot; alt=&quot;Add library&quot; width=&quot;600px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;미디어 폴더 찾기 (Transmission의 다운로드 폴더를 /data 디렉토리에 매핑해 놓았으므로 해당 디렉토리 하위에 movie 폴더를 만들고 선택)
+&lt;img src=&quot;/assets/images/post/docker/container/2018-12-28-container-1-home/select_directory.png&quot; alt=&quot;Folder&quot; width=&quot;600px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;고급 선택후 에이전트를 Daum Movie 선택
+&lt;img src=&quot;/assets/images/post/docker/container/2018-12-28-container-1-home/select_agent.png&quot; alt=&quot;Agent&quot; width=&quot;600px&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;그외 설정&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;자막 설정 (설정 &amp;gt; 언어)
+&lt;img src=&quot;/assets/images/post/docker/container/2018-12-28-container-1-home/lang.png&quot; alt=&quot;Lang&quot; width=&quot;600px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;라이브러리 설정 (설정 &amp;gt; 라이브러리)
+&lt;img src=&quot;/assets/images/post/docker/container/2018-12-28-container-1-home/set_library.png&quot; alt=&quot;Set library&quot; width=&quot;600px&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker-compose-이용하여-설정&quot;&gt;Docker Compose 이용하여 설정&lt;/h3&gt;
+&lt;p&gt;위의 3가지 컨테이너를 Docker Compose를 활용하여 한번에 컨트롤 할 수 있도록 한다.&lt;br /&gt;
+WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였으므로 해당 이미지를 기반으로 컨테이너를 생성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;docker-compose.yml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;alex-webdav&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;seongjongjeon/webdav:1.0&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alex-webdav&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/etc/localtime:/etc/localtime:ro&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/webdav:/var/webdav&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#- /data/deploy/docker/webdav/users.passwd:/etc/nginx/users.pass # 미리 생성한 계정파일을 매핑하는 경우.&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20000:80&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;USERNAME=user_name&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;USERPWD=user_password&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;alex-transmission&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;seongjongjeon/transmission:95&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alex-transmission&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/etc/localtime:/etc/localtime:ro&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/transmission/config:/config&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/transmission/download:/downloads&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/transmission/watch:/watch&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20001:9091&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;51413:51413&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;51413:51413/udp&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TZ=Asia/Seoul&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;USERNAME=YOUR_NAME&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;USERPWD=YOUR_PWD&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;alex-plex&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;plexinc/pms-docker&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alex-plex&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;depends_on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alex-transmission&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/etc/localtime:/etc/localtime:ro&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/plex/config:/config&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/plex/transcode:/transcode&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/data/repositories/docker-repository/transmission/download/complete:/data&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20010:32400/tcp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20011:3005/tcp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20012:8324/tcp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20013:32469/tcp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20014:1900/udp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20015:32410/udp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20016:32412/udp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20017:32413/udp&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20018:32414/udp&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TZ=Asia/Seoul&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PLEX_CLAIM=YOUR_CLAIM_TOKEN&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Compose Start&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 기존 디렉토리 삭제&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /data/repositories/docker-repository/plex
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /data/repositories/docker-repository/transmission
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /data/repositories/docker-repository/webdav
+
+&lt;span class=&quot;c&quot;&gt;# WebDAV 디렉토리 권한설정&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /data/repositories/docker-repository/webdav &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod 777 /data/repositories/docker-repository/webdav
+
+&lt;span class=&quot;c&quot;&gt;# 서비스 시작&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 서비스 정지&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker-compose down
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>전성종</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="docker" />
+      
+
+      
+        <summary type="html">Docker를 이용하여 아래의 환경들을 구축할 것이다. WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.) Transmission : 토렌트 Plex : 동영상 스트리밍 서버</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">Docker 기본개념</title>
-      <link href="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" />
+      <link href="http://localhost:4000/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" />
       <published>2018-12-20T09:00:00+09:00</published>
       <updated>2018-12-20T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/docker/guide/guide-1-basic</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/docker/guide/guide-1-basic</id>
+      <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
   &lt;p&gt;로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다.&lt;br /&gt;
 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

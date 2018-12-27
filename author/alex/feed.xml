@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/author/alex/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2018-12-27T12:28:00+09:00</updated>
+  <updated>2018-12-27T14:02:04+09:00</updated>
   <id>http://localhost:4000/author/alex/feed.xml</id>
 
   
@@ -273,6 +273,7 @@ MAINTAINER alexonepath@gmail.com
 
 COPY entrypoint.sh /
 RUN chmod +x entrypoint.sh
+RUN rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /etc/services.d/transmission
 CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; /usr/bin/transmission-daemon &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; /config &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; /watch &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -281,11 +282,9 @@ CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&g
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERPWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;then
-    &lt;/span&gt;killall transmission-daemon
-    sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
+    &lt;/span&gt;sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-username&quot;: &quot;&quot;/&quot;rpc-username&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-password&quot;: &quot;.*&quot;/&quot;rpc-password&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
-    chmod 777 /config/settings.json
     &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

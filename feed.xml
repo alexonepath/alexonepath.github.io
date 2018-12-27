@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-27T12:28:00+09:00</updated><id>http://localhost:4000/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">Docker Compose</title><link href="http://localhost:4000/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/guide-3-compose</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-27T14:02:04+09:00</updated><id>http://localhost:4000/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">Docker Compose</title><link href="http://localhost:4000/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/guide-3-compose</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
   &lt;p&gt;Docker Compose에 대한 설명과 사용법에 대해서 알아본다.&lt;br /&gt;
 Docker Compose 란?&lt;/p&gt;
   &lt;ul&gt;
@@ -282,6 +282,7 @@ MAINTAINER alexonepath@gmail.com
 
 COPY entrypoint.sh /
 RUN chmod +x entrypoint.sh
+RUN rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /etc/services.d/transmission
 CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; /usr/bin/transmission-daemon &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; /config &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; /watch &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -290,11 +291,9 @@ CMD /entrypoint.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&g
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$USERPWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;then
-    &lt;/span&gt;killall transmission-daemon
-    sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
+    &lt;/span&gt;sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-authentication-required&quot;: false/&quot;rpc-authentication-required&quot;: true/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-username&quot;: &quot;&quot;/&quot;rpc-username&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
     sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&quot;rpc-password&quot;: &quot;.*&quot;/&quot;rpc-password&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USERPWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;/g'&lt;/span&gt; /config/settings.json
-    chmod 777 /config/settings.json
     &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;Done.
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

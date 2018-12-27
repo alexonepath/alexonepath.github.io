@@ -1,0 +1,28 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        charset utf-8;
+
+        location /webdav {
+            alias /var/webdav;
+
+            #client_body_temp_path /var/dav/temp;
+            dav_methods     PUT DELETE MKCOL COPY MOVE;
+            dav_ext_methods   PROPFIND OPTIONS;
+            create_full_put_path  on;
+            dav_access    user:rw group:rw all:rw;
+            autoindex     on;
+
+            # Basic auth
+            auth_basic "restricted";
+            auth_basic_user_file /etc/nginx/htpasswd;
+
+            send_timeout  36000s;
+
+            proxy_connect_timeout  36000s;
+            proxy_read_timeout  36000s;
+            proxy_send_timeout  36000s;
+            # large file uploads
+            proxy_request_buffering off;
+        }
+}

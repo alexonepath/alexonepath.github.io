@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://alexonepath.github.io/tag/docker/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2018-12-27T17:07:48+09:00</updated>
+  <updated>2019-01-12T02:21:52+09:00</updated>
   <id>https://alexonepath.github.io/tag/docker/feed.xml</id>
 
   
@@ -539,6 +539,24 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
 
 &lt;span class=&quot;c&quot;&gt;# 서비스 정지&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker-compose down
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;plex-자막처리-출처&quot;&gt;Plex 자막처리 (&lt;a href=&quot;http://egloos.zum.com/mcchae/v/10763080&quot; target=&quot;_blank&quot;&gt;출처&lt;/a&gt;)&lt;/h3&gt;
+&lt;p&gt;Plex에서는 smi 자막을 처리할때 서버에서 트랜스코딩하여 스트리밍한다.&lt;br /&gt;
+하지만 srt 포맷의 자막은 트랜스코더를 거치지 않고 스트리밍이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;SMI to SRT 변환&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt.py&quot;&gt;smi2srt.py&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt-all&quot;&gt;smi2srt-all.sh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;위 2개의 파일을 다운로드 한 후 아래의 명령어로 수행한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# chardet 설치&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt install python-chardet
+
+&lt;span class=&quot;c&quot;&gt;# 인자로 변환해야 할 디렉토리를 선택하면 하위 디렉토리까지 모두 변환&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ./smi2srt-all.sh /change/driectory/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       

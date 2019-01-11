@@ -84,6 +84,26 @@
         </script>
     
         <script>
+            categoryName = 'container';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
+            categoryName = 'docker';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
             categoryName = 'guide';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -394,8 +414,14 @@
 <span class="nv">$ </span>jekyll new github-page
 <span class="nv">$ </span><span class="nb">cd </span>github-page
 
+<span class="c"># Dependency Library 다운로드</span>
+<span class="nv">$ </span>bundle install
+
 <span class="c"># 실행</span>
 <span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve
+
+<span class="c"># 포스팅 날짜가 미래인 경우</span>
+<span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--future</span> <span class="nb">true</span>
 </code></pre></div></div>
 
 

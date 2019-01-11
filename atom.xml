@@ -8,6 +8,45 @@
     
       
       <item>
+        <title>Prometheus &amp; Grafana (시스템 모니터링)</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;Prometheus &amp;amp; Grafana 란?&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://prometheus.io/&quot; target=&quot;_blank&quot;&gt;Prometheus&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;시스템을 모니터링 하고, 설정한 임계치를 넘으면 알람을 발송해주는 오픈소스프로젝트이다.&lt;/li&gt;
+        &lt;li&gt;다른 모니터링 시스템과 달리 수집하고자 하는 노드들이 서버로 데이터를 전달하는 방식이 아닌&lt;/li&gt;
+        &lt;li&gt;서버가 각노드에 데이터를 요청한다. (pull 방식)&lt;/li&gt;
+        &lt;li&gt;모니터링대상 서버들을 정적으로 yml 파일에 설정하지 않고 동적으로 할 수도 있음.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://grafana.com/&quot; target=&quot;_blank&quot;&gt;Grafana&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;측정항목에 대해 쿼리, 시각화, 경고메시지 등을 할 수 있다.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;prometheus-컴포넌트&quot;&gt;Prometheus 컴포넌트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Server : 각 클라이언트로부터 시스템 정보를 수집하고 시계열 데이터를 저장&lt;/li&gt;
+  &lt;li&gt;Exporter : Server에서 데이터를 수집하기 위한 Client (모니터링 대상 서버에서 실행)&lt;/li&gt;
+  &lt;li&gt;그외 Push Gateway, Alert Manager 등등의 다양한 툴들이 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 11 Jan 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://alexonepath.github.io/category/etc/container-2-monitoring.html</link>
+        <guid isPermaLink="true">https://alexonepath.github.io/category/etc/container-2-monitoring.html</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Docker Compose</title>
         
           <description>&lt;blockquote&gt;

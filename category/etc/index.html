@@ -73,6 +73,17 @@
 
     
         <script>
+            categoryName = 'etc';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+
+    
+        <script>
             categoryName = 'docker';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -372,6 +383,22 @@
         <section class="blog single">
             <div class="wrap">
                 
+                
+                    
+                        
+                            
+                            <article class="blog-post">
+                                <div class="blog-post__header">
+                                    <h2 class="blog-post__title"><a href="/category/etc/etc-crypto.html">암호화 알고리즘</a></h2>
+                                    <p class="blog-post__subtitle">Jan 12, 2019</p>
+                                </div>
+
+                                <div class="blog-post__content">
+                                    <p>암호화 알고리즘에 대해서 설명한다.</p>
+                                </div>
+                            </article>
+                        
+                    
                 
                     
                         

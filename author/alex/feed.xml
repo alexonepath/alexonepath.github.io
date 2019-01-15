@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-    <link href="http://localhost:4000/author/alex/feed.xml" rel="self" type="application/atom+xml"/>
-    <link href="http://localhost:4000/" rel="alternate" type="text/html"/>
-    <updated>2019-01-15T14:01:08+09:00</updated>
-    <id>http://localhost:4000/author/alex/feed.xml</id>
+  <link href="https://alexonepath.github.io/author/alex/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
+  <updated>2019-01-15T14:02:02+09:00</updated>
+  <id>https://alexonepath.github.io/author/alex/feed.xml</id>
 
   
   
@@ -33,12 +33,11 @@
   
     <entry>
       <title type="html">암호화 알고리즘</title>
-        <link href="http://localhost:4000/category/etc/etc-crypto.html" rel="alternate" type="text/html"
-              title="암호화 알고리즘"/>
+      <link href="https://alexonepath.github.io/category/etc/etc-crypto.html" rel="alternate" type="text/html" title="암호화 알고리즘" />
       <published>2019-01-12T09:00:00+09:00</published>
       <updated>2019-01-12T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/etc/etc-crypto</id>
-        <content type="html" xml:base="http://localhost:4000/category/etc/etc-crypto.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/etc/etc-crypto</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-crypto.html">&lt;blockquote&gt;
   &lt;p&gt;암호화 알고리즘의 종류 및 특징에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -136,12 +135,11 @@
   
     <entry>
       <title type="html">Prometheus &amp;amp; Grafana (시스템 모니터링)</title>
-        <link href="http://localhost:4000/category/etc/container-2-monitoring.html" rel="alternate" type="text/html"
-              title="Prometheus &amp; Grafana (시스템 모니터링)"/>
+      <link href="https://alexonepath.github.io/category/etc/container-2-monitoring.html" rel="alternate" type="text/html" title="Prometheus &amp; Grafana (시스템 모니터링)" />
       <published>2019-01-11T09:00:00+09:00</published>
       <updated>2019-01-11T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/etc/container-2-monitoring</id>
-        <content type="html" xml:base="http://localhost:4000/category/etc/container-2-monitoring.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/etc/container-2-monitoring</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/etc/container-2-monitoring.html">&lt;blockquote&gt;
   &lt;p&gt;Prometheus &amp;amp; Grafana 란?&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://prometheus.io/&quot; target=&quot;_blank&quot;&gt;Prometheus&lt;/a&gt;
@@ -420,12 +418,11 @@ node_memory_MemFree_bytes&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span 
   
     <entry>
       <title type="html">Docker를 이용하여 홈서버 구축</title>
-        <link href="http://localhost:4000/category/docker/guide/container-1-home.html" rel="alternate" type="text/html"
-              title="Docker를 이용하여 홈서버 구축"/>
+      <link href="https://alexonepath.github.io/category/docker/guide/container-1-home.html" rel="alternate" type="text/html" title="Docker를 이용하여 홈서버 구축" />
       <published>2018-12-21T09:00:00+09:00</published>
       <updated>2018-12-21T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/docker/guide/container-1-home</id>
-        <content type="html" xml:base="http://localhost:4000/category/docker/guide/container-1-home.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/docker/guide/container-1-home</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/container-1-home.html">&lt;blockquote&gt;
   &lt;p&gt;Docker를 이용하여 아래의 환경들을 구축할 것이다.&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.)&lt;/li&gt;
@@ -720,8 +717,8 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
 
 &lt;p&gt;&lt;em&gt;SMI to SRT 변환&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&quot;http://localhost:4000/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt.py&quot;&gt;smi2srt.py&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;http://localhost:4000/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt-all&quot;&gt;smi2srt-all.sh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt.py&quot;&gt;smi2srt.py&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt-all&quot;&gt;smi2srt-all.sh&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;위 2개의 파일을 다운로드 한 후 아래의 명령어로 수행한다.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -760,12 +757,11 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
   
     <entry>
       <title type="html">Docker Network</title>
-        <link href="http://localhost:4000/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html"
-              title="Docker Network"/>
+      <link href="https://alexonepath.github.io/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html" title="Docker Network" />
       <published>2018-12-21T09:00:00+09:00</published>
       <updated>2018-12-21T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/docker/guide/guide-2-network</id>
-        <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/docker/guide/guide-2-network</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
   &lt;p&gt;Docker에서 컨네이너가 사용하는 네트워크 방식에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -877,12 +873,11 @@ docker service create &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; myser
   
     <entry>
       <title type="html">Docker Compose</title>
-        <link href="http://localhost:4000/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html"
-              title="Docker Compose"/>
+      <link href="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" />
       <published>2018-12-21T09:00:00+09:00</published>
       <updated>2018-12-21T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/docker/guide/guide-3-compose</id>
-        <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/docker/guide/guide-3-compose</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
   &lt;p&gt;Docker Compose에 대한 설명과 사용법에 대해서 알아본다.&lt;br /&gt;
 Docker Compose 란?&lt;/p&gt;
   &lt;ul&gt;
@@ -977,12 +972,11 @@ Docker Compose 란?&lt;/p&gt;
   
     <entry>
       <title type="html">Docker 기본개념</title>
-        <link href="http://localhost:4000/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html"
-              title="Docker 기본개념"/>
+      <link href="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" />
       <published>2018-12-20T09:00:00+09:00</published>
       <updated>2018-12-20T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/docker/guide/guide-1-basic</id>
-        <content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/docker/guide/guide-1-basic</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
   &lt;p&gt;로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다.&lt;br /&gt;
 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1068,11 +1062,11 @@ Docker Compose 란?&lt;/p&gt;
   
     <entry>
       <title type="html">GA 적용</title>
-        <link href="http://localhost:4000/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용"/>
+      <link href="https://alexonepath.github.io/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용" />
       <published>2018-12-20T09:00:00+09:00</published>
       <updated>2018-12-20T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/etc/etc-ga</id>
-        <content type="html" xml:base="http://localhost:4000/category/etc/etc-ga.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/etc/etc-ga</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-ga.html">&lt;blockquote&gt;
   &lt;p&gt;Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다.&lt;br /&gt;
 페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1119,12 +1113,11 @@ Docker Compose 란?&lt;/p&gt;
   
     <entry>
       <title type="html">Jekyll 카테고리 및 페이징</title>
-        <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate"
-              type="text/html" title="Jekyll 카테고리 및 페이징"/>
+      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/githubpage/jekyll/jekyll-3-category</id>
-        <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
   &lt;p&gt;글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.&lt;br /&gt;
 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1345,12 +1338,11 @@ title: category
   
     <entry>
       <title type="html">Jekyll 빌드에서 배포까지</title>
-        <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate"
-              type="text/html" title="Jekyll 빌드에서 배포까지"/>
+      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" />
       <published>2018-12-18T09:00:00+09:00</published>
       <updated>2018-12-18T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme</id>
-        <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/category/githubpage/jekyll/jekyll-1-init.html&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1620,12 +1612,11 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
   
     <entry>
       <title type="html">Jekyll 시작하기</title>
-        <link href="http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html" rel="alternate"
-              type="text/html" title="Jekyll 시작하기"/>
+      <link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html" rel="alternate" type="text/html" title="Jekyll 시작하기" />
       <published>2018-12-17T09:00:00+09:00</published>
       <updated>2018-12-17T09:00:00+09:00</updated>
-        <id>http://localhost:4000/category/githubpage/jekyll/jekyll-1-init</id>
-        <content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html">&lt;blockquote&gt;
+      <id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init</id>
+      <content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html">&lt;blockquote&gt;
   &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;

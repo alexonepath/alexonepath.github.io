@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
     <title> - Articles</title>
     <description>About alexander</description>
     <link>
-    http://localhost:4000</link>
+        http://localhost:4000
+    </link>
     
       
       <item>
@@ -18,8 +19,9 @@
         
         <pubDate>Sat, 12 Jan 2019 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/etc/etc-crypto.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/etc/etc-crypto.html</guid>
+            http://localhost:4000/category/etc/etc-crypto.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/etc/etc-crypto.html</guid>
       </item>
       
     
@@ -57,8 +59,9 @@
         
         <pubDate>Fri, 11 Jan 2019 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/etc/container-2-monitoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/etc/container-2-monitoring.html</guid>
+            http://localhost:4000/category/etc/container-2-monitoring.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/etc/container-2-monitoring.html</guid>
       </item>
       
     
@@ -88,8 +91,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/docker/guide/guide-3-compose.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-3-compose.html</guid>
+            http://localhost:4000/category/docker/guide/guide-3-compose.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-3-compose.html</guid>
       </item>
       
     
@@ -105,8 +109,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/docker/guide/guide-2-network.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-2-network.html</guid>
+            http://localhost:4000/category/docker/guide/guide-2-network.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-2-network.html</guid>
       </item>
       
     
@@ -127,8 +132,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/docker/guide/container-1-home.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/container-1-home.html</guid>
+            http://localhost:4000/category/docker/guide/container-1-home.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/docker/guide/container-1-home.html</guid>
       </item>
       
     
@@ -145,8 +151,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/etc/etc-ga.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/etc/etc-ga.html</guid>
+            http://localhost:4000/category/etc/etc-ga.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/etc/etc-ga.html</guid>
       </item>
       
     
@@ -163,8 +170,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/docker/guide/guide-1-basic.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-1-basic.html</guid>
+            http://localhost:4000/category/docker/guide/guide-1-basic.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-1-basic.html</guid>
       </item>
       
     
@@ -181,8 +189,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</guid>
+            http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</guid>
       </item>
       
     
@@ -199,8 +208,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</guid>
+            http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</guid>
       </item>
       
     
@@ -222,8 +232,9 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Mon, 17 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</link>
-        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</guid>
+            http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html
+        </link>
+          <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</guid>
       </item>
       
     

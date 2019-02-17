@@ -8,6 +8,27 @@
     
       
       <item>
+        <title>Project</title>
+        
+          <description>&lt;h3 id=&quot;블록체인-개발-프로젝트&quot;&gt;블록체인 개발 프로젝트&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;개발 환경&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;블록체인 : Golang, Dep,&lt;/li&gt;
+  &lt;li&gt;Java Client : Java, Gradle, Swagger&lt;/li&gt;
+  &lt;li&gt;Javascript Client : Javascript, Webpack&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Feb 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://alexonepath.github.io/category/etc/etc-temp.html</link>
+        <guid isPermaLink="true">https://alexonepath.github.io/category/etc/etc-temp.html</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>암호화 알고리즘</title>
         
           <description>&lt;blockquote&gt;

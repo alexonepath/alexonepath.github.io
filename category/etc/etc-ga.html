@@ -27,6 +27,11 @@
 <!-- Custom Styles -->
 <style></style>
 
+<script src="/assets/built/static/page.js"></script>
+<script>
+    console.log(window.location)
+</script>
+
 
 <!-- Analytics Code -->
 
@@ -74,6 +79,17 @@
     let postMap = {}
     let categoryName = '';
 </script>
+
+    
+        <script>
+            categoryName = 'etc';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
 
     
         <script>
@@ -443,7 +459,5 @@
         <span>© Alexonepath.</span> All rights reserved. Powered by GitHub Pages.
     </div>
 </footer>
-
-<script src="/assets/built/static/page.js"></script>
 </body>
 </html>

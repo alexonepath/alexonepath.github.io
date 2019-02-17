@@ -28,6 +28,11 @@
 <!-- Custom Styles -->
 <style></style>
 
+<script src="/assets/built/static/page.js"></script>
+<script>
+    console.log(window.location)
+</script>
+
 
 <!-- Analytics Code -->
 
@@ -72,6 +77,17 @@
     let postMap = {}
     let categoryName = '';
 </script>
+
+    
+        <script>
+            categoryName = 'etc';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
 
     
         <script>
@@ -387,6 +403,17 @@
                 
                     <article class="blog-post">
                         <div class="blog-post__header">
+                            <h2 class="blog-post__title"><a href="/category/etc/etc-temp.html">Project</a></h2>
+                            <p class="blog-post__subtitle">Feb 17, 2019</p>
+                        </div>
+
+                        <div class="blog-post__content">
+                            <p></p>
+                        </div>
+                    </article>
+                
+                    <article class="blog-post">
+                        <div class="blog-post__header">
                             <h2 class="blog-post__title"><a href="/category/etc/etc-crypto.html">암호화 알고리즘</a></h2>
                             <p class="blog-post__subtitle">Jan 12, 2019</p>
                         </div>
@@ -484,20 +511,46 @@
                         </div>
                     </article>
                 
-                    <article class="blog-post">
-                        <div class="blog-post__header">
-                            <h2 class="blog-post__title"><a href="/category/githubpage/jekyll/jekyll-1-init.html">Jekyll 시작하기</a></h2>
-                            <p class="blog-post__subtitle">Dec 17, 2018</p>
-                        </div>
-
-                        <div class="blog-post__content">
-                            <p>Jekyll을 이용한 Github Page 활용방법</p>
-                        </div>
-                    </article>
-                
 
                 <!--Page Navigation-->
                 
+    <ul id="pagination" role="navigation">
+        
+        
+        
+        
+
+        
+        
+        
+
+        <li id="page-prev">
+            
+                <span class="sr-only">No Previous Page</span>
+            
+        </li>
+
+        
+            
+            
+            
+            
+            <li class="page-number active"><a href="/">1</a></li>
+        
+            
+            
+            
+            
+            <li class="page-number "><a href="/page2">2</a></li>
+        
+
+        <li id="page-next">
+            
+                <a href="/page2"><span class="sr-only">Next Page</span></a>
+            
+        </li>
+    </ul>
+
             </div>
         </section>
     </div>
@@ -507,7 +560,5 @@
         <span>© Alexonepath.</span> All rights reserved. Powered by GitHub Pages.
     </div>
 </footer>
-
-<script src="/assets/built/static/page.js"></script>
 </body>
 </html>

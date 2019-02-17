@@ -1,4 +1,9 @@
+import {sha256} from '../lib/sha256.min'; // or './module'
+
 $(function () {
+    let body = $('.post-content:eq(0)').html();
+    $('.post-content:eq(0)').html('');
+
     function slideMenu() {
         var activeState = $('#menu-container .menu-list').hasClass('active');
         $('#menu-container .menu-list').animate({left: activeState ? '0%' : '-100%'}, 400);
@@ -32,5 +37,17 @@ $(function () {
         } else {
             $('.toggle[path*="{0}"]'.format(window.location.pathname)).find('a').addClass('selected');
         }
+    }
+
+    if (window.location.pathname == "/category/etc/etc-temp.html") {
+        let pwd = prompt("Password");
+        if (sha256(pwd) == 'b953c93008d860d24f0eef3e87e9ccb162d99590488df185e2bfd5b3647fe40d') {
+            $('.post-content:eq(0)').html(body);
+        } else {
+            alert('Incorrect');
+            window.location.href = window.location.origin;
+        }
+    } else {
+        $('.post-content:eq(0)').html(body);
     }
 });

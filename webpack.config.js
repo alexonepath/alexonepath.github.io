@@ -9,13 +9,15 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
-let jsSrc = glob.sync('./assets/js/*.js');
+let jsSrc = glob.sync('./assets/js/custom/*.js');
+let jsLibSrc = glob.sync('./assets/js/lib/*.js');
 let cssSrc = glob.sync('./assets/css/*.css');
 
 const config = {
     mode: 'none',
     entry: {    //압축할 대상이 되는 파일위치
         page: jsSrc.concat(cssSrc),
+        // sha256: jsLibSrc
     },
     output: {
         path: path.resolve(__dirname, './assets/built/static'), //압축한 파일이 저장될 위치

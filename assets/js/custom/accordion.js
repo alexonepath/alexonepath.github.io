@@ -41,7 +41,7 @@ $(function () {
 
     if (window.location.pathname == "/category/etc/etc-temp.html") {
         let pwd = prompt("Password");
-        if (sha256(pwd) == 'b953c93008d860d24f0eef3e87e9ccb162d99590488df185e2bfd5b3647fe40d') {
+        if (pwd != null && sha256(pwd) == 'b953c93008d860d24f0eef3e87e9ccb162d99590488df185e2bfd5b3647fe40d') {
             $('.alex-content:eq(0)').html(body);
             $('.alex-content:eq(0)').css('visibility', 'visible');
         } else {

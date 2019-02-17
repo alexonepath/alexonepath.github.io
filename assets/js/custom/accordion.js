@@ -1,7 +1,6 @@
 import {sha256} from '../lib/sha256.min'; // or './module'
 
 $(function () {
-    $('.alex-content:eq(0)').css('visibility', 'hidden');
     let body = $('.alex-content:eq(0)').html();
     $('.alex-content:eq(0)').html('');
 

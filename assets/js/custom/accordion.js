@@ -1,9 +1,9 @@
 import {sha256} from '../lib/sha256.min'; // or './module'
 
 $(function () {
-    $('.post-content:eq(0)').css('visibility', 'hidden');
-    let body = $('.post-content:eq(0)').html();
-    $('.post-content:eq(0)').html('');
+    $('.alex-content:eq(0)').css('visibility', 'hidden');
+    let body = $('.alex-content:eq(0)').html();
+    $('.alex-content:eq(0)').html('');
 
     function slideMenu() {
         var activeState = $('#menu-container .menu-list').hasClass('active');
@@ -43,14 +43,14 @@ $(function () {
     if (window.location.pathname == "/category/etc/etc-temp.html") {
         let pwd = prompt("Password");
         if (sha256(pwd) == 'b953c93008d860d24f0eef3e87e9ccb162d99590488df185e2bfd5b3647fe40d') {
-            $('.post-content:eq(0)').html(body);
-            $('.post-content:eq(0)').css('visibility', 'visible');
+            $('.alex-content:eq(0)').html(body);
+            $('.alex-content:eq(0)').css('visibility', 'visible');
         } else {
             alert('Incorrect');
             window.location.href = window.location.origin;
         }
     } else {
-        $('.post-content:eq(0)').html(body);
-        $('.post-content:eq(0)').css('visibility', 'visible');
+        $('.alex-content:eq(0)').html(body);
+        $('.alex-content:eq(0)').css('visibility', 'visible');
     }
 });

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html class="no-js fontawesome-i2svg-active fontawesome-i2svg-complete" lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,19 +35,22 @@
 
 <!-- Extra Header JS Code -->
     <!-- Page Info -->
-    <title>Alexander's life</title>
-    <meta name="description" content="Alexander's life">
+    <title>Java7 New Feature</title>
+    <meta name="description" content="">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alexander's life">
-    <meta name="twitter:description" content="Alexander's life">
+    <meta name="twitter:title" content="Java7 New Feature">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image:src" content="">
 
     <!-- Facebook OpenGraph -->
-    <meta property="og:title" content="Alexander's life">
-    <meta property="og:description" content="Alexander's life">
+    <meta property="og:title" content="Java7 New Feature">
+    <meta property="og:description" content="">
     <meta property="og:image" content="">
+
+    <meta property="og:url" content="https://alexonepath.github.io/category/java/new_feature/java-new_feature-7.html">
+    <meta property="og:description" content="">
 </head>
 <body class="ajax-loading" data-site-url="" data-page-url="/">
 <header class="header">
@@ -427,103 +429,111 @@
 
 </header>
 <div class="page">
-    <div class="page__content">
-        <section class="blog single">
+    <div class="page__content" data-page-title="Java7 New Feature">
+        <section class="intro">
             <div class="wrap">
-                
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                            
-                            <article class="blog-post">
-                                <div class="blog-post__header">
-                                    <h2 class="blog-post__title"><a href="/category/etc/etc-crypto.html">암호화 알고리즘</a></h2>
-                                    <p class="blog-post__subtitle">Jan 12, 2019</p>
-                                </div>
-
-                                <div class="blog-post__content">
-                                    <p>암호화 알고리즘에 대해서 설명한다.</p>
-                                </div>
-                            </article>
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                            
-                            <article class="blog-post">
-                                <div class="blog-post__header">
-                                    <h2 class="blog-post__title"><a href="/category/etc/etc-ga.html">GA 적용</a></h2>
-                                    <p class="blog-post__subtitle">Dec 20, 2018</p>
-                                </div>
-
-                                <div class="blog-post__content">
-                                    <p>사이트에 GA 적용방법을 알아본다.</p>
-                                </div>
-                            </article>
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                        
-                    
-                
-
-                
-
-                <!--Page Navigation-->
-                
+                <h1>Java7 New Feature</h1>
+                <p>Feb 24, 2019</p>
             </div>
+        </section>
+
+        <section class="single post-content alex-content" style="visibility:hidden">
+            <div class="wrap">
+                <blockquote>
+  <p>Java7의 새로운 특징을 알아본다.<br /></p>
+</blockquote>
+
+<h3 id="java7">Java7</h3>
+<p><strong>Type Interface (다이아몬드 지시자)</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Java7 이전코드</span>
+Map&lt;String, String&gt; map <span class="o">=</span> new HashMap&lt;String, String&gt;<span class="o">()</span><span class="p">;</span>
+
+<span class="c"># Java7</span>
+Map&lt;String, String&gt; map <span class="o">=</span> new HashMap&lt;<span class="o">&gt;()</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>swith에서 String 사용</strong></p>
+<ul>
+  <li>이전 버젼에서는 기본형과 열거형만 사용이 가능했지만 Java7부터 String도 사용이 가능하다.</li>
+  <li>본인은 if ~ else 구분이 많을 경우 switch문을 사용하는 코드가 깔끔하다고 생각하기에 환영하는 기능이다.</li>
+</ul>
+
+<p><strong>Automatic Resource Management</strong></p>
+<ul>
+  <li>Connection, Files, Stream 등과 같은 자원을 자동으로 회수하여준다.</li>
+  <li>Closeable 인터페이스를 구현한 경우 try내의 resource들에 대해 close를 수행해준다.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Java7 이전코드 (finally에서 개발자가 close 호출 코드를 넣어줘야 했다.)</span>
+FileInputStream fis <span class="o">=</span> null<span class="p">;</span>
+try <span class="o">{</span>
+    fis <span class="o">=</span> new FileInputStream<span class="o">(</span><span class="s2">"/tmp/temp.txt"</span><span class="o">)</span><span class="p">;</span>
+<span class="o">}</span> catch <span class="o">(</span>FileNotFoundException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span> finally <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>fis <span class="o">!=</span> null<span class="o">)</span> <span class="o">{</span>
+        try <span class="o">{</span>
+            fis.close<span class="o">()</span><span class="p">;</span>
+        <span class="o">}</span> catch <span class="o">(</span>IOException e<span class="o">)</span> <span class="o">{</span>
+            e.printStackTrace<span class="o">()</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c"># Java7 (try 구문에 Closeable 인터페이스를 구현한 경우 close 메소드를 자동으로 호출한다.)</span>
+try <span class="o">(</span>FileInputStream fis <span class="o">=</span> new FileInputStream<span class="o">(</span><span class="s2">"/tmp/temp.txt"</span><span class="o">))</span> <span class="o">{</span>
+<span class="o">}</span> catch <span class="o">(</span>FileNotFoundException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span> catch <span class="o">(</span>IOException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>그외 추가사항</strong></p>
+<ol>
+  <li>Underscore in numeric literal : 숫자형에 언더스코어(“_”) 사용이 가능하다. ex) int num = 1_000;</li>
+  <li>향상된 예외처리 :
+    <ul>
+      <li><code class="highlighter-rouge">하나의 catch에 "|" 연산자로 여러개의 예외를 처리할 수 있다. ex) catch(예외1 | 예외2 | 예외3 e)</code></li>
+      <li>Multi Catch문에 사용된 예외들은 부모와 자식관계의 상속을 가져서는 안된다.</li>
+      <li>위와같은 상속관계가 있는 경우 부모예외를 이용하여 한번에 처리하자.</li>
+      <li>공통된 조상의 멤버변수 및 메서드만 사용가능 하다. (e.method() 호출했는데 해당 예외에는 없는 메서드일 수 있다.)</li>
+    </ul>
+  </li>
+  <li>G1 GC가 기본 가비지 컬렉터로 선택</li>
+  <li>그외
+    <ul>
+      <li>Binary Literals with Prefix “0b”</li>
+      <li>Java NIO 2.0</li>
+      <li>More Precise Rethrowing of Exception</li>
+    </ul>
+  </li>
+</ol>
+
+            </div>
+            <div style="height: 100px"></div>
+            
+                <div id="disqus_thread"></div>
+                <script>
+
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://alexonepath-1.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
         </section>
     </div>
 </div>

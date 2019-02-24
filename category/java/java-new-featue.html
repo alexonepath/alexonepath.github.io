@@ -35,22 +35,22 @@
 
 <!-- Extra Header JS Code -->
     <!-- Page Info -->
-    <title>Jekyll 카테고리 및 페이징</title>
-    <meta name="description" content="카테고리 적용 및 페이징 처리">
+    <title>Java New Feature</title>
+    <meta name="description" content="">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jekyll 카테고리 및 페이징">
-    <meta name="twitter:description" content="카테고리 적용 및 페이징 처리">
+    <meta name="twitter:title" content="Java New Feature">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image:src" content="">
 
     <!-- Facebook OpenGraph -->
-    <meta property="og:title" content="Jekyll 카테고리 및 페이징">
-    <meta property="og:description" content="카테고리 적용 및 페이징 처리">
+    <meta property="og:title" content="Java New Feature">
+    <meta property="og:description" content="">
     <meta property="og:image" content="">
 
-    <meta property="og:url" content="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html">
-    <meta property="og:description" content="카테고리 적용 및 페이징 처리">
+    <meta property="og:url" content="https://alexonepath.github.io/category/java/java-new-featue.html">
+    <meta property="og:description" content="">
 </head>
 <body class="ajax-loading" data-site-url="" data-page-url="/">
 <header class="header">
@@ -408,205 +408,112 @@
 
 </header>
 <div class="page">
-    <div class="page__content" data-page-title="Jekyll 카테고리 및 페이징">
+    <div class="page__content" data-page-title="Java New Feature">
         <section class="intro">
             <div class="wrap">
-                <h1>Jekyll 카테고리 및 페이징</h1>
-                <p>Dec 18, 2018</p>
+                <h1>Java New Feature</h1>
+                <p>Feb 24, 2019</p>
             </div>
         </section>
 
         <section class="single post-content alex-content" style="visibility:hidden">
             <div class="wrap">
                 <blockquote>
-  <p>글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.<br />
-글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성</p>
+  <p>Java7, 8의 새로운 특징을 알아본다.<br />
+Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)</p>
 </blockquote>
 
-<h3 id="_cnofigyml-추가">_cnofig.yml 추가</h3>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
-  <span class="na">categories</span><span class="pi">:</span> <span class="c1"># 카테고리정의 markdown 파일들이 위치할 디렉토리 이름. (프로젝트에 _categories 디렉토리 생성)</span>
-    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># html 페이지 생성</span>
-    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/category/:path/</span> <span class="c1"># 생성된 페이지의 URL 형식</span>
+<h3 id="java7">Java7</h3>
+<p><strong>Type Interface (다이아몬드 지시자)</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Java7 이전코드</span>
+Map&lt;String, String&gt; map <span class="o">=</span> new HashMap&lt;String, String&gt;<span class="o">()</span><span class="p">;</span>
 
-<span class="na">defaults</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
-  <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
-  <span class="na">type</span><span class="pi">:</span> <span class="s">category</span>
-<span class="na">values</span><span class="pi">:</span>
-  <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">category"</span>  <span class="c1"># 카테고리 페이지 로딩시 사용할 Layout 페이지 (_layouts 폴더에 category.html 이용)</span>
+<span class="c"># Java7</span>
+Map&lt;String, String&gt; map <span class="o">=</span> new HashMap&lt;<span class="o">&gt;()</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="카테고리-정의">카테고리 정의</h3>
+<p><strong>swith에서 String 사용</strong></p>
 <ul>
-  <li>2depth의 카테고리가 가능하도록 정의할 것이다.</li>
-  <li>각 카테고리가 나타는 순서를 정의할 것이다.</li>
+  <li>이전 버젼에서는 기본형과 열거형만 사용이 가능했지만 Java7부터 String도 사용이 가능하다.</li>
+  <li>본인은 if ~ else 구분이 많을 경우 switch문을 사용하는 코드가 깔끔하다고 생각하기에 환영하는 기능이다.</li>
 </ul>
 
-<p><img src="/assets/images/post/githubpage/jekyll/2018-12-18-jekyll-3-category-1.png" alt="Category markdown" height="200px" /></p>
-
+<p><strong>Automatic Resource Management</strong></p>
 <ul>
-  <li>카테고리 디렉토리 구조
+  <li>Connection, Files, Stream 등과 같은 자원을 자동으로 회수하여준다.</li>
+  <li>Closeable 인터페이스를 구현한 경우 try내의 resource들에 대해 close를 수행해준다.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Java7 이전코드 (finally에서 개발자가 close 호출 코드를 넣어줘야 했다.)</span>
+FileInputStream fis <span class="o">=</span> null<span class="p">;</span>
+try <span class="o">{</span>
+    fis <span class="o">=</span> new FileInputStream<span class="o">(</span><span class="s2">"/tmp/temp.txt"</span><span class="o">)</span><span class="p">;</span>
+<span class="o">}</span> catch <span class="o">(</span>FileNotFoundException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span> finally <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>fis <span class="o">!=</span> null<span class="o">)</span> <span class="o">{</span>
+        try <span class="o">{</span>
+            fis.close<span class="o">()</span><span class="p">;</span>
+        <span class="o">}</span> catch <span class="o">(</span>IOException e<span class="o">)</span> <span class="o">{</span>
+            e.printStackTrace<span class="o">()</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c"># Java7 (try 구문에 Closeable 인터페이스를 구현한 경우 close 메소드를 자동으로 호출한다.)</span>
+try <span class="o">(</span>FileInputStream fis <span class="o">=</span> new FileInputStream<span class="o">(</span><span class="s2">"/tmp/temp.txt"</span><span class="o">))</span> <span class="o">{</span>
+<span class="o">}</span> catch <span class="o">(</span>FileNotFoundException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span> catch <span class="o">(</span>IOException e<span class="o">)</span> <span class="o">{</span>
+    e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>그외 추가사항</strong></p>
+<ol>
+  <li>Underscore in numeric literal : 숫자형에 언더스코어(“_”) 사용이 가능하다. ex) int num = 1_000;</li>
+  <li>향상된 예외처리 :
     <ul>
-      <li>1depth의 카테고리는 _categories 디렉토리 아래에 생성</li>
-      <li>2depth의 카테고리는 1depth의 파일명으로 디렉토리를 생성하고 해당 디렉토리 하위에 *.md 파일을 정의한다.</li>
+      <li><code class="highlighter-rouge">하나의 catch에 "|" 연산자로 여러개의 예외를 처리할 수 있다. ex) catch(예외1 | 예외2 | 예외3 e)</code></li>
+      <li>Multi Catch문에 사용된 예외들은 부모와 자식관계의 상속을 가져서는 안된다.</li>
+      <li>위와같은 상속관계가 있는 경우 부모예외를 이용하여 한번에 처리하자.</li>
+      <li>공통된 조상의 멤버변수 및 메서드만 사용가능 하다. (e.method() 호출했는데 해당 예외에는 없는 메서드일 수 있다.)</li>
     </ul>
   </li>
+  <li>G1 GC가 기본 가비지 컬렉터로 선택</li>
+  <li>그외
+    <ul>
+      <li>Binary Literals with Prefix “0b”</li>
+      <li>Java NIO 2.0</li>
+      <li>More Precise Rethrowing of Exception</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="java8-나중에-추가">Java8 (나중에 추가)</h3>
+<blockquote>
+  <p>스트림 API<br />
+메서드에 코드 전달 (메서드 레퍼런스와 람다)<br />
+인터페이스의 디폴트 메서</p>
+</blockquote>
+
+<p><strong>스트림 API</strong>
+스트림이란? 한번에 한개씩 만들어지는 연속적인 데이터 항목들의 모임.<br />
+프로그램은 입력 스트림에서 한개씩 읽어 들이며 출력 스트림으로 데이터를 한개씩 기록한다.<br />
+즉, 어떤 프로그램의 출력은 다른 프로그램의 입력 스트림이 될 수 있다. ex) 리눅스의 파이프</p>
+
+<p>장점</p>
+<ul>
+  <li>스레드를 이용하지 않고도 멀티 코어를 활용할 수 있게됨.</li>
+  <li>작업을 고수준으로 추상화하여 일련의 스트림으로 만들어 처리할 수 있음.</li>
 </ul>
 
-<p><strong>카테고리 파일정의</strong></p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- 파일이름 githubpage.md (1Depth) --&gt;
----
-</span>order: 1 <span class="c">&lt;!-- order 필드로 카테고리를 정렬 --&gt;</span>
-title: Github Page <span class="c">&lt;!-- 카테고리 이름 --&gt;</span>
-name: githubpage <span class="c">&lt;!-- 포스팅의 속할 카테고리를 지정할 때 사용 --&gt;</span>
-<span class="gh">children: [jekyll] &lt;!-- 해당 카테고리에 하위 카테고리로 정의할 카테고리 배열 --&gt;
----
-</span></code></pre></div></div>
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- 파일이름 githubpage/jekyll.md (2Depth) --&gt;
----
-</span>title: Jekyll
-name: jekyll
-<span class="gh">isSub: true
----
-</span></code></pre></div></div>
-
-<p><strong>카테고리 트리생성 정의</strong></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c">&lt;!-- _includes 폴더에 category.html 파일을 생성 --&gt;</span>
-<span class="c">&lt;!-- {% include category.html %}와 같이 페이지에서 추가 --&gt;</span>
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"category"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;strong</span> <span class="na">id=</span><span class="s">"menu-wrapper"</span> <span class="na">style=</span><span class="s">"color:#010F42;font-size:18px;"</span><span class="nt">&gt;</span>카테고리<span class="nt">&lt;/strong&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"menu-list accordion"</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- 1depth의 카테고리 정렬 --&gt;</span>
-        {% assign sortedCategories = (site.categories | sort: "order") %}
-        {% for category in sortedCategories %}
-            {% if category.isSub %}
-                {% continue %}
-            {% endif %}
-
-            {% assign linkClass = '' %}
-            {% assign toggleClass = '' %}
-            {% assign menuUrl = category.url %}
-            {% if category.children.size &gt;= 1 %}
-                {% assign menuUrl = 'javascript:;' %}
-                {% assign linkClass = 'icon-plus' %}
-                {% assign toggleClass = 'accordion-toggle' %}
-            {% endif %}
-        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"menu{{ forloop.index }}"</span> <span class="na">class=</span><span class="s">"toggle {{ toggleClass }}"</span> <span class="na">path=</span><span class="s">"{{ category.url }}"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"{{ linkClass }}"</span><span class="nt">&gt;&lt;/span&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"menu-link"</span> <span class="na">href=</span><span class="s">"{{ menuUrl }}"</span><span class="nt">&gt;</span>{{ category.title }}<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-            {% if category.children.size &gt;= 1 %}
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"menu-submenu accordion-content"</span><span class="nt">&gt;</span>
-                {% for child in category.children %}
-                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"head"</span> <span class="na">href=</span><span class="s">"{{ category.url }}{{ child }}/"</span><span class="nt">&gt;</span>{{ child }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                {% endfor %}
-            <span class="nt">&lt;/ul&gt;</span>
-            {% endif %}
-        {% endfor %}
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-
-</code></pre></div></div>
-
-<p><strong>카테고리 URL 페이지의 layout</strong></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c">&lt;!-- _layouts 폴더에 category.html 파일을 생성 --&gt;</span>
----
-layout: default
-title: category
----
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"content-layout"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
-                {% assign postCnt = 0 %}
-                {% for post in site.posts %}
-                    {% for category in post.categories %}
-                        {% if page.name == category %}
-                            {% assign postCnt = postCnt | plus: 1 %}
-                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list-module"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>{{ post.date | date: '%b %d %Y' }}, {{ site.data.authors[post.author].name }}
-                      <span class="c">&lt;!--new--&gt;</span>
-                    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{ site.baseurl }}{{ site.data.authors[post.author].picture }}"</span> <span class="na">class=</span><span class="s">"gravatar"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;/span&gt;</span>
-                                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.baseurl }}{{ post.permalink }}{{ post.url | remove_first: '/' }}"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-link"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/h2&gt;</span>
-                                    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-description"</span><span class="nt">&gt;</span>{{ post.description }}<span class="nt">&lt;/p&gt;</span>
-                                <span class="nt">&lt;/a&gt;</span>
-                            <span class="nt">&lt;/div&gt;</span>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-
-                {% if postCnt == 0 %}
-                    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-link"</span> <span class="na">style=</span><span class="s">"text-align: center"</span><span class="nt">&gt;</span>곧 포스팅될 예정입니다.<span class="nt">&lt;/h2&gt;</span>
-                {% endif %}
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/section&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
-</code></pre></div></div>
-
-<h3 id="페이징-정의">페이징 정의</h3>
-<p>_include 폴더에 pagenator.html 파일을 정의하였고 사용하는 페이지에서 include를 사용하여 추가.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-{% if paginator.total_pages &gt; 1 %}
-    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- 표시할 페이지 넘버 갯수 (홀수로 정의해야 함.) --&gt;</span>
-        {% assign pageNums = 5 %}
-        {% assign median = pageNums | divided_by: 2 %}
-        {% assign tempStart = paginator.page | minus: median %}
-        {% if tempStart <span class="nt">&lt;</span><span class="err">=</span> <span class="na">0</span> <span class="err">%}</span>
-            <span class="err">{%</span> <span class="na">assign</span> <span class="na">startPage =</span><span class="err"> </span><span class="s">1</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">else</span> <span class="err">%}</span>
-            <span class="err">{%</span> <span class="na">assign</span> <span class="na">startPage =</span><span class="err"> </span><span class="s">tempStart</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span>
-
-        <span class="err">{%</span> <span class="na">assign</span> <span class="na">tempEnd =</span><span class="err"> </span><span class="s">paginator.page</span> <span class="err">|</span> <span class="na">divided_by:</span> <span class="na">2</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">if</span> <span class="na">tempEnd</span> <span class="err">&lt;=</span> <span class="na">1</span> <span class="err">%}</span>
-            <span class="err">{%</span> <span class="na">assign</span> <span class="na">endPage =</span><span class="err"> </span><span class="s">startPage</span> <span class="err">|</span> <span class="na">plus:</span> <span class="na">pageNums</span> <span class="err">|</span> <span class="na">minus:</span> <span class="na">1</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">else</span> <span class="err">%}</span>
-            <span class="err">{%</span> <span class="na">assign</span> <span class="na">endPage =</span><span class="err"> </span><span class="s">paginator.page</span> <span class="err">|</span> <span class="na">plus:</span> <span class="na">median</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span>
-        <span class="err">{%</span> <span class="na">if</span> <span class="na">endPage</span> <span class="nt">&gt;</span> paginator.total_pages %}
-            {% assign endPage = paginator.total_pages %}
-        {% endif %}
-
-        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"page-prev"</span><span class="nt">&gt;</span>
-            {% if paginator.previous_page %}
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginator.previous_page_path }}"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>No Previous Page<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
-            {% else %}
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>No Previous Page<span class="nt">&lt;/span&gt;</span>
-            {% endif %}
-        <span class="nt">&lt;/li&gt;</span>
-
-        {% for page in (startPage..endPage) %}
-            {% assign isActive = "" %}
-            {% assign href = "/page" | append: page %}
-            {% if page == 1 %}
-                {% assign href = {{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }} %}
-            {% endif %}
-            {% if page == paginator.page %}
-                {% assign isActive = "active" %}
-            {% endif %}
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"page-number {{ isActive }}"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ href }}"</span><span class="nt">&gt;</span>{{ page }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        {% endfor %}
-
-        <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"page-next"</span><span class="nt">&gt;</span>
-            {% if paginator.next_page %}
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginator.next_page_path }}"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
-            {% else %}
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/span&gt;</span>
-            {% endif %}
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-{% endif %}
-
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List&lt;String&gt; list <span class="o">=</span> Arrays.asList<span class="o">(</span><span class="s2">"a1"</span>, <span class="s2">"a2"</span>, <span class="s2">"b1"</span>, <span class="s2">"c2"</span>, <span class="s2">"c1"</span><span class="o">)</span><span class="p">;</span>
+list.stream<span class="o">()</span>
+    .filter<span class="o">(</span>s -&gt; s.startsWith<span class="o">(</span><span class="s2">"c"</span><span class="o">))</span>
+    .map<span class="o">(</span>String::toUpperCase<span class="o">)</span>
+    .sorted<span class="o">()</span>
+    .forEach<span class="o">(</span>System.out::println<span class="o">)</span><span class="p">;</span>
 </code></pre></div></div>
 
             </div>

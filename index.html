@@ -3,15 +3,6 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131245045-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-131245045-1');
-</script>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -74,6 +65,17 @@
     let postMap = {}
     let categoryName = '';
 </script>
+
+    
+        <script>
+            categoryName = 'java';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
 
     
         <script>
@@ -311,7 +313,19 @@
     
     
     
-    <li id="menu6" class="toggle menu__list__item " path="/category/etc/">
+    <li id="menu6" class="toggle menu__list__item " path="/category/java/">
+        <span class=""></span>
+        <a class="menu-link" href="/category/java/">Java <script>if(postMap['java'] != undefined){document.write('('+postMap['java']+')');}</script></a>
+    </li>
+    
+
+    
+
+    
+    
+    
+    
+    <li id="menu7" class="toggle menu__list__item " path="/category/etc/">
         <span class=""></span>
         <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
     </li>
@@ -386,6 +400,17 @@
     <div class="page__content">
         <section class="blog single">
             <div class="wrap">
+                
+                    <article class="blog-post">
+                        <div class="blog-post__header">
+                            <h2 class="blog-post__title"><a href="/category/java/java-new-featue.html">Java New Feature</a></h2>
+                            <p class="blog-post__subtitle">Feb 24, 2019</p>
+                        </div>
+
+                        <div class="blog-post__content">
+                            <p></p>
+                        </div>
+                    </article>
                 
                     <article class="blog-post">
                         <div class="blog-post__header">
@@ -486,20 +511,46 @@
                         </div>
                     </article>
                 
-                    <article class="blog-post">
-                        <div class="blog-post__header">
-                            <h2 class="blog-post__title"><a href="/category/githubpage/jekyll/jekyll-1-init.html">Jekyll 시작하기</a></h2>
-                            <p class="blog-post__subtitle">Dec 17, 2018</p>
-                        </div>
-
-                        <div class="blog-post__content">
-                            <p>Jekyll을 이용한 Github Page 활용방법</p>
-                        </div>
-                    </article>
-                
 
                 <!--Page Navigation-->
                 
+    <ul id="pagination" role="navigation">
+        
+        
+        
+        
+
+        
+        
+        
+
+        <li id="page-prev">
+            
+                <span class="sr-only">No Previous Page</span>
+            
+        </li>
+
+        
+            
+            
+            
+            
+            <li class="page-number active"><a href="/">1</a></li>
+        
+            
+            
+            
+            
+            <li class="page-number "><a href="/page2">2</a></li>
+        
+
+        <li id="page-next">
+            
+                <a href="/page2"><span class="sr-only">Next Page</span></a>
+            
+        </li>
+    </ul>
+
             </div>
         </section>
     </div>

@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://alexonepath.github.io/tag/crypto/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2019-02-21T21:59:21+09:00</updated>
-  <id>https://alexonepath.github.io/tag/crypto/feed.xml</id>
+  <link href="http://localhost:4000/tag/crypto/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2019-02-24T14:57:10+09:00</updated>
+  <id>http://localhost:4000/tag/crypto/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">암호화 알고리즘</title>
-      <link href="https://alexonepath.github.io/category/etc/etc-crypto.html" rel="alternate" type="text/html" title="암호화 알고리즘" />
+      <link href="http://localhost:4000/category/etc/etc-crypto.html" rel="alternate" type="text/html" title="암호화 알고리즘" />
       <published>2019-01-12T09:00:00+09:00</published>
       <updated>2019-01-12T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/etc/etc-crypto</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-crypto.html">&lt;blockquote&gt;
+      <id>http://localhost:4000/category/etc/etc-crypto</id>
+      <content type="html" xml:base="http://localhost:4000/category/etc/etc-crypto.html">&lt;blockquote&gt;
   &lt;p&gt;암호화 알고리즘의 종류 및 특징에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 

@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://alexonepath.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexonepath.github.io/" rel="alternate" type="text/html" /><updated>2019-02-21T21:59:21+09:00</updated><id>https://alexonepath.github.io/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">암호화 알고리즘</title><link href="https://alexonepath.github.io/category/etc/etc-crypto.html" rel="alternate" type="text/html" title="암호화 알고리즘" /><published>2019-01-12T09:00:00+09:00</published><updated>2019-01-12T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/etc/etc-crypto</id><content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-crypto.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-24T14:57:10+09:00</updated><id>http://localhost:4000/</id><title type="html">About alex</title><subtitle>About alexander</subtitle><entry><title type="html">Java New Feature</title><link href="http://localhost:4000/category/java/java-new-featue.html" rel="alternate" type="text/html" title="Java New Feature" /><published>2019-02-24T09:00:00+09:00</published><updated>2019-02-24T09:00:00+09:00</updated><id>http://localhost:4000/category/java/java-new-featue</id><content type="html" xml:base="http://localhost:4000/category/java/java-new-featue.html">&lt;blockquote&gt;
+  &lt;p&gt;Java7, 8의 새로운 특징을 알아본다.&lt;br /&gt;
+Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;java7&quot;&gt;Java7&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Type Interface (다이아몬드 지시자)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Java7 이전코드&lt;/span&gt;
+Map&amp;lt;String, String&amp;gt; map &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new HashMap&amp;lt;String, String&amp;gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Java7&lt;/span&gt;
+Map&amp;lt;String, String&amp;gt; map &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new HashMap&amp;lt;&lt;span class=&quot;o&quot;&gt;&amp;gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;swith에서 String 사용&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;이전 버젼에서는 기본형과 열거형만 사용이 가능했지만 Java7부터 String도 사용이 가능하다.&lt;/li&gt;
+  &lt;li&gt;본인은 if ~ else 구분이 많을 경우 switch문을 사용하는 코드가 깔끔하다고 생각하기에 환영하는 기능이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Automatic Resource Management&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Connection, Files, Stream 등과 같은 자원을 자동으로 회수하여준다.&lt;/li&gt;
+  &lt;li&gt;Closeable 인터페이스를 구현한 경우 try내의 resource들에 대해 close를 수행해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Java7 이전코드 (finally에서 개발자가 close 호출 코드를 넣어줘야 했다.)&lt;/span&gt;
+FileInputStream fis &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; null&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+try &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    fis &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new FileInputStream&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/tmp/temp.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FileNotFoundException e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    e.printStackTrace&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; finally &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fis &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; null&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        try &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            fis.close&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;IOException e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            e.printStackTrace&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Java7 (try 구문에 Closeable 인터페이스를 구현한 경우 close 메소드를 자동으로 호출한다.)&lt;/span&gt;
+try &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FileInputStream fis &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new FileInputStream&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/tmp/temp.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FileNotFoundException e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    e.printStackTrace&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;IOException e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    e.printStackTrace&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;그외 추가사항&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Underscore in numeric literal : 숫자형에 언더스코어(“_”) 사용이 가능하다. ex) int num = 1_000;&lt;/li&gt;
+  &lt;li&gt;향상된 예외처리 :
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;하나의 catch에 &quot;|&quot; 연산자로 여러개의 예외를 처리할 수 있다. ex) catch(예외1 | 예외2 | 예외3 e)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Multi Catch문에 사용된 예외들은 부모와 자식관계의 상속을 가져서는 안된다.&lt;/li&gt;
+      &lt;li&gt;위와같은 상속관계가 있는 경우 부모예외를 이용하여 한번에 처리하자.&lt;/li&gt;
+      &lt;li&gt;공통된 조상의 멤버변수 및 메서드만 사용가능 하다. (e.method() 호출했는데 해당 예외에는 없는 메서드일 수 있다.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;G1 GC가 기본 가비지 컬렉터로 선택&lt;/li&gt;
+  &lt;li&gt;그외
+    &lt;ul&gt;
+      &lt;li&gt;Binary Literals with Prefix “0b”&lt;/li&gt;
+      &lt;li&gt;Java NIO 2.0&lt;/li&gt;
+      &lt;li&gt;More Precise Rethrowing of Exception&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;java8-나중에-추가&quot;&gt;Java8 (나중에 추가)&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;스트림 API&lt;br /&gt;
+메서드에 코드 전달 (메서드 레퍼런스와 람다)&lt;br /&gt;
+인터페이스의 디폴트 메서&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;스트림 API&lt;/strong&gt;
+스트림이란? 한번에 한개씩 만들어지는 연속적인 데이터 항목들의 모임.&lt;br /&gt;
+프로그램은 입력 스트림에서 한개씩 읽어 들이며 출력 스트림으로 데이터를 한개씩 기록한다.&lt;br /&gt;
+즉, 어떤 프로그램의 출력은 다른 프로그램의 입력 스트림이 될 수 있다. ex) 리눅스의 파이프&lt;/p&gt;
+
+&lt;p&gt;장점&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;스레드를 이용하지 않고도 멀티 코어를 활용할 수 있게됨.&lt;/li&gt;
+  &lt;li&gt;작업을 고수준으로 추상화하여 일련의 스트림으로 만들어 처리할 수 있음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;String&amp;gt; list &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Arrays.asList&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a1&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;a2&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;b1&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;c2&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;c1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+list.stream&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    .filter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s -&amp;gt; s.startsWith&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+    .map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;String::toUpperCase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    .sorted&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    .forEach&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;System.out::println&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="java7" /><category term="java8" /><category term="java9" /><summary type="html">Java7, 8의 새로운 특징을 알아본다. Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)</summary></entry><entry><title type="html">암호화 알고리즘</title><link href="http://localhost:4000/category/etc/etc-crypto.html" rel="alternate" type="text/html" title="암호화 알고리즘" /><published>2019-01-12T09:00:00+09:00</published><updated>2019-01-12T09:00:00+09:00</updated><id>http://localhost:4000/category/etc/etc-crypto</id><content type="html" xml:base="http://localhost:4000/category/etc/etc-crypto.html">&lt;blockquote&gt;
   &lt;p&gt;암호화 알고리즘의 종류 및 특징에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -64,7 +160,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://kjur.github.io/jsrsasign/&quot; target=&quot;_blank&quot;&gt;Javascript Library&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bouncycastle.org&quot; target=&quot;_blank&quot;&gt;Java Library&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>전성종</name></author><category term="crypto" /><category term="암호" /><summary type="html">암호화 알고리즘의 종류 및 특징에 대해서 알아본다.</summary></entry><entry><title type="html">Prometheus &amp;amp; Grafana (시스템 모니터링)</title><link href="https://alexonepath.github.io/category/etc/container-2-monitoring.html" rel="alternate" type="text/html" title="Prometheus &amp; Grafana (시스템 모니터링)" /><published>2019-01-11T09:00:00+09:00</published><updated>2019-01-11T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/etc/container-2-monitoring</id><content type="html" xml:base="https://alexonepath.github.io/category/etc/container-2-monitoring.html">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>전성종</name></author><category term="crypto" /><category term="암호" /><summary type="html">암호화 알고리즘의 종류 및 특징에 대해서 알아본다.</summary></entry><entry><title type="html">Prometheus &amp;amp; Grafana (시스템 모니터링)</title><link href="http://localhost:4000/category/etc/container-2-monitoring.html" rel="alternate" type="text/html" title="Prometheus &amp; Grafana (시스템 모니터링)" /><published>2019-01-11T09:00:00+09:00</published><updated>2019-01-11T09:00:00+09:00</updated><id>http://localhost:4000/category/etc/container-2-monitoring</id><content type="html" xml:base="http://localhost:4000/category/etc/container-2-monitoring.html">&lt;blockquote&gt;
   &lt;p&gt;Prometheus &amp;amp; Grafana 란?&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://prometheus.io/&quot; target=&quot;_blank&quot;&gt;Prometheus&lt;/a&gt;
@@ -311,7 +407,7 @@ node_memory_MemFree_bytes&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span 
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;최종 설정된 모습&lt;/strong&gt;
-&lt;img src=&quot;/assets/images/post/docker/container/2019-01-11-container-2-monitoring/done.png&quot; alt=&quot;1&quot; width=&quot;800px&quot; /&gt;&lt;/p&gt;</content><author><name>전성종</name></author><category term="prometheus" /><category term="grafana" /><summary type="html">Prometheus &amp;amp; Grafana 란? Prometheus 시스템을 모니터링 하고, 설정한 임계치를 넘으면 알람을 발송해주는 오픈소스프로젝트이다. 다른 모니터링 시스템과 달리 수집하고자 하는 노드들이 서버로 데이터를 전달하는 방식이 아닌 서버가 각노드에 데이터를 요청한다. (pull 방식) 모니터링대상 서버들을 정적으로 yml 파일에 설정하지 않고 동적으로 할 수도 있음. Grafana 측정항목에 대해 쿼리, 시각화, 경고메시지 등을 할 수 있다. Prometheus 컴포넌트 Server : 각 클라이언트로부터 시스템 정보를 수집하고 시계열 데이터를 저장 Exporter : Server에서 데이터를 수집하기 위한 Client (모니터링 대상 서버에서 실행) 그외 Push Gateway, Alert Manager 등등의 다양한 툴들이 있음</summary></entry><entry><title type="html">Docker Compose</title><link href="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/docker/guide/guide-3-compose</id><content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
+&lt;img src=&quot;/assets/images/post/docker/container/2019-01-11-container-2-monitoring/done.png&quot; alt=&quot;1&quot; width=&quot;800px&quot; /&gt;&lt;/p&gt;</content><author><name>전성종</name></author><category term="prometheus" /><category term="grafana" /><summary type="html">Prometheus &amp;amp; Grafana 란? Prometheus 시스템을 모니터링 하고, 설정한 임계치를 넘으면 알람을 발송해주는 오픈소스프로젝트이다. 다른 모니터링 시스템과 달리 수집하고자 하는 노드들이 서버로 데이터를 전달하는 방식이 아닌 서버가 각노드에 데이터를 요청한다. (pull 방식) 모니터링대상 서버들을 정적으로 yml 파일에 설정하지 않고 동적으로 할 수도 있음. Grafana 측정항목에 대해 쿼리, 시각화, 경고메시지 등을 할 수 있다. Prometheus 컴포넌트 Server : 각 클라이언트로부터 시스템 정보를 수집하고 시계열 데이터를 저장 Exporter : Server에서 데이터를 수집하기 위한 Client (모니터링 대상 서버에서 실행) 그외 Push Gateway, Alert Manager 등등의 다양한 툴들이 있음</summary></entry><entry><title type="html">Docker Compose</title><link href="http://localhost:4000/category/docker/guide/guide-3-compose.html" rel="alternate" type="text/html" title="Docker Compose" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/guide-3-compose</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-3-compose.html">&lt;blockquote&gt;
   &lt;p&gt;Docker Compose에 대한 설명과 사용법에 대해서 알아본다.&lt;br /&gt;
 Docker Compose 란?&lt;/p&gt;
   &lt;ul&gt;
@@ -376,7 +472,7 @@ Docker Compose 란?&lt;/p&gt;
 
 &lt;span class=&quot;c&quot;&gt;# 그외 커맨드 확인&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker-compose &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker Compose에 대한 설명과 사용법에 대해서 알아본다. Docker Compose 란? 여러개의 컨테이너를 실행하기 위해 정의되는 툴이다. YAML 파일을 이용하여 각 컨테이너를 정의한다. 단일 커맨드를 이용하여 정의한 compose 파일의 서비스들을 실행하거나 중지할 수 있다. 어플리케이션의 생명주기를 관리하기 위해 아래와 같은 기능을 제공한다. start, stop, rebuild 실행중인 서비스들의 상태 확인 실행중인 서비스들의 로그 확인 서비스에서 일회성 명령실행</summary></entry><entry><title type="html">Docker Network</title><link href="https://alexonepath.github.io/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html" title="Docker Network" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/docker/guide/guide-2-network</id><content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker Compose에 대한 설명과 사용법에 대해서 알아본다. Docker Compose 란? 여러개의 컨테이너를 실행하기 위해 정의되는 툴이다. YAML 파일을 이용하여 각 컨테이너를 정의한다. 단일 커맨드를 이용하여 정의한 compose 파일의 서비스들을 실행하거나 중지할 수 있다. 어플리케이션의 생명주기를 관리하기 위해 아래와 같은 기능을 제공한다. start, stop, rebuild 실행중인 서비스들의 상태 확인 실행중인 서비스들의 로그 확인 서비스에서 일회성 명령실행</summary></entry><entry><title type="html">Docker Network</title><link href="http://localhost:4000/category/docker/guide/guide-2-network.html" rel="alternate" type="text/html" title="Docker Network" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/guide-2-network</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-2-network.html">&lt;blockquote&gt;
   &lt;p&gt;Docker에서 컨네이너가 사용하는 네트워크 방식에 대해서 알아본다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -458,7 +554,7 @@ docker service create &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; myser
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; ex-over &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--replicas&lt;/span&gt; 3 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ubuntu sleep infinity
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker에서 컨네이너가 사용하는 네트워크 방식에 대해서 알아본다.</summary></entry><entry><title type="html">Docker를 이용하여 홈서버 구축</title><link href="https://alexonepath.github.io/category/docker/guide/container-1-home.html" rel="alternate" type="text/html" title="Docker를 이용하여 홈서버 구축" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/docker/guide/container-1-home</id><content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/container-1-home.html">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker에서 컨네이너가 사용하는 네트워크 방식에 대해서 알아본다.</summary></entry><entry><title type="html">Docker를 이용하여 홈서버 구축</title><link href="http://localhost:4000/category/docker/guide/container-1-home.html" rel="alternate" type="text/html" title="Docker를 이용하여 홈서버 구축" /><published>2018-12-21T09:00:00+09:00</published><updated>2018-12-21T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/container-1-home</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/container-1-home.html">&lt;blockquote&gt;
   &lt;p&gt;Docker를 이용하여 아래의 환경들을 구축할 것이다.&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.)&lt;/li&gt;
@@ -753,8 +849,8 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
 
 &lt;p&gt;&lt;em&gt;SMI to SRT 변환&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt.py&quot;&gt;smi2srt.py&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://alexonepath.github.io/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt-all&quot;&gt;smi2srt-all.sh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt.py&quot;&gt;smi2srt.py&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/assets/files/post/docker/container/2018-12-21-container-1-home/smi2srt-all&quot;&gt;smi2srt-all.sh&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;위 2개의 파일을 다운로드 한 후 아래의 명령어로 수행한다.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -763,7 +859,7 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
 
 &lt;span class=&quot;c&quot;&gt;# 인자로 변환해야 할 디렉토리를 선택하면 하위 디렉토리까지 모두 변환&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# ./smi2srt-all.sh /change/driectory/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker를 이용하여 아래의 환경들을 구축할 것이다. WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.) Transmission : 토렌트 Plex : 동영상 스트리밍 서버</summary></entry><entry><title type="html">GA 적용</title><link href="https://alexonepath.github.io/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용" /><published>2018-12-20T09:00:00+09:00</published><updated>2018-12-20T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/etc/etc-ga</id><content type="html" xml:base="https://alexonepath.github.io/category/etc/etc-ga.html">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">Docker를 이용하여 아래의 환경들을 구축할 것이다. WebDav(Web Distributed Authoring and Versioning) : 웹서버를 저장소로 사용 (저장된 문서, 파일 읽기 및 편집가능.) Transmission : 토렌트 Plex : 동영상 스트리밍 서버</summary></entry><entry><title type="html">GA 적용</title><link href="http://localhost:4000/category/etc/etc-ga.html" rel="alternate" type="text/html" title="GA 적용" /><published>2018-12-20T09:00:00+09:00</published><updated>2018-12-20T09:00:00+09:00</updated><id>http://localhost:4000/category/etc/etc-ga</id><content type="html" xml:base="http://localhost:4000/category/etc/etc-ga.html">&lt;blockquote&gt;
   &lt;p&gt;Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다.&lt;br /&gt;
 페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -778,7 +874,7 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
 &lt;p&gt;&lt;img src=&quot;/assets/images/post/etc/2018-12-20-etc-ga/ga-tracking.png&quot; alt=&quot;Get tracking id&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;일반 사이트의 경우는 범용 사이트 태그를 복사하여 head 태그 사이에 넣는다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>전성종</name></author><category term="ga" /><category term="google analytics" /><summary type="html">Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다. 페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.</summary></entry><entry><title type="html">Docker 기본개념</title><link href="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" /><published>2018-12-20T09:00:00+09:00</published><updated>2018-12-20T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/docker/guide/guide-1-basic</id><content type="html" xml:base="https://alexonepath.github.io/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>전성종</name></author><category term="ga" /><category term="google analytics" /><summary type="html">Google Analytics를 이용하여 운영중인 사이트의 사용자 접속 정보를 확인한다. 페이지뷰, 유입된 사용자 등등의 각종 지표를 확인할 수 있다.</summary></entry><entry><title type="html">Docker 기본개념</title><link href="http://localhost:4000/category/docker/guide/guide-1-basic.html" rel="alternate" type="text/html" title="Docker 기본개념" /><published>2018-12-20T09:00:00+09:00</published><updated>2018-12-20T09:00:00+09:00</updated><id>http://localhost:4000/category/docker/guide/guide-1-basic</id><content type="html" xml:base="http://localhost:4000/category/docker/guide/guide-1-basic.html">&lt;blockquote&gt;
   &lt;p&gt;로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다.&lt;br /&gt;
 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -834,7 +930,7 @@ WebDAV 및 Transmission의 경우는 이미지를 Docker Hub에 업로드 하였
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다. 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.</summary></entry><entry><title type="html">Jekyll 카테고리 및 페이징</title><link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category</id><content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
+&lt;/table&gt;</content><author><name>전성종</name></author><category term="docker" /><summary type="html">로컬, 개발, 운영에 대해서 모두 동일한 환경을 구성할 수 있다. 순간 트래픽이 증가하거나 하는 경우 새로운 서버에 Docker Engine만 설치하면 빠르게 환경 구축이 가능하다.</summary></entry><entry><title type="html">Jekyll 카테고리 및 페이징</title><link href="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html" rel="alternate" type="text/html" title="Jekyll 카테고리 및 페이징" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>http://localhost:4000/category/githubpage/jekyll/jekyll-3-category</id><content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html">&lt;blockquote&gt;
   &lt;p&gt;글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다.&lt;br /&gt;
 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1023,7 +1119,7 @@ title: category
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
 {% endif %}
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다. 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성</summary></entry><entry><title type="html">Jekyll 빌드에서 배포까지</title><link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme</id><content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">글들을 카테고리 별로 관리하기 위해 jekyll의 collection 기능 및 스크립트를 추가한다. 글목록의 페이징 처리를 하기 위한 간단한 스크립트 작성</summary></entry><entry><title type="html">Jekyll 빌드에서 배포까지</title><link href="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html" rel="alternate" type="text/html" title="Jekyll 빌드에서 배포까지" /><published>2018-12-18T09:00:00+09:00</published><updated>2018-12-18T09:00:00+09:00</updated><id>http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme</id><content type="html" xml:base="http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html">&lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/category/githubpage/jekyll/jekyll-1-init.html&quot;&gt;이전 포스트&lt;/a&gt;에서는 로컬에서 서버를 띄워서 확인하였다.&lt;br /&gt;
 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1261,46 +1357,4 @@ Gulp에 정의된 Task 들이 나열되고 해당 항목을 더블클릭하면 T
 
 &lt;h3 id=&quot;배포&quot;&gt;배포&lt;/h3&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make publish
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">이전 포스트에서는 로컬에서 서버를 띄워서 확인하였다. 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.</summary></entry><entry><title type="html">Jekyll 시작하기</title><link href="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html" rel="alternate" type="text/html" title="Jekyll 시작하기" /><published>2018-12-17T09:00:00+09:00</published><updated>2018-12-17T09:00:00+09:00</updated><id>https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init</id><content type="html" xml:base="https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html">&lt;blockquote&gt;
-  &lt;p&gt;Jekyll(지킬) 이란?&lt;br /&gt;&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다.&lt;/li&gt;
-    &lt;li&gt;Ruby로 작성 되었으며, &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt; 템플릿 언어를 사용한다.&lt;/li&gt;
-    &lt;li&gt;Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다.&lt;/li&gt;
-    &lt;li&gt;Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;github-page-사용이유&quot;&gt;Github Page 사용이유&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;블로그를 사용하는 것보다 markdown을 사용하여 빠르게 글을 작성할 수 있다.&lt;/li&gt;
-  &lt;li&gt;IDE에 markdown 플러그인을 설치하면 글을 작성하면서 미리보기를 할 수 있다.&lt;/li&gt;
-  &lt;li&gt;스타트업 기업의 경우 홈페이지를 운영하기 위해 따로 서버를 설치할 필요가 없음.&lt;/li&gt;
-  &lt;li&gt;국내 유명 IT 기업들이 사용하고 있어서. (^^;;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;사전준비&quot;&gt;사전준비&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Mac에서 Ruby 설치&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install rbenv ruby-build
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'if which rbenv &amp;gt; /dev/null; then eval &quot;$(rbenv init -)&quot;; fi'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.profile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.profile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv install 2.5.1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv global 2.5.1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install bundler jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;jekyll-프로젝트-생성-및-실행-접속&quot;&gt;jekyll 프로젝트 생성 및 실행 (&lt;a href=&quot;http://127.0.0.1:4000&quot; target=&quot;_blank&quot;&gt;접속&lt;/a&gt;)&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 기본 프로젝트 생성&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new github-page
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;github-page
-
-&lt;span class=&quot;c&quot;&gt;# Dependency Library 다운로드&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle install
-
-&lt;span class=&quot;c&quot;&gt;# 실행&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-
-&lt;span class=&quot;c&quot;&gt;# 포스팅 날짜가 미래인 경우&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--future&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">Jekyll(지킬) 이란? Jekyll은 간단하고, 확장 가능한 정적 사이트를 생성하기 위한 툴이다. Ruby로 작성 되었으며, Liquid 템플릿 언어를 사용한다. Github Page는 정적페이지를 서버 없이 홈페이지를 운영할 수 있도록해준다. Jekyll을 이용하여 정적페이지를 생성하고, Github Page를 이용하여 서비스한다.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>전성종</name></author><category term="Jekyll" /><category term="jekyll" /><summary type="html">이전 포스트에서는 로컬에서 서버를 띄워서 확인하였다. 이번 포스팅은 jasper2 테마 적용후 Github Page에 배포하는 방법까지 설명할 것이다.</summary></entry></feed>

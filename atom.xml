@@ -4,23 +4,22 @@
     <title> - Articles</title>
     <description>About alexander</description>
     <link>
-    https://alexonepath.github.io</link>
+    http://localhost:4000</link>
     
       
       <item>
-        <title>Java New Feature</title>
+        <title>Java7 New Feature</title>
         
           <description>&lt;blockquote&gt;
-  &lt;p&gt;Java7, 8의 새로운 특징을 알아본다.&lt;br /&gt;
-Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)&lt;/p&gt;
+  &lt;p&gt;Java7의 새로운 특징을 알아본다.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 </description>
         
         <pubDate>Sun, 24 Feb 2019 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/java/java-new-featue.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/java/java-new-featue.html</guid>
+        http://localhost:4000/category/java/new_feature/java-new_feature-7.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/java/new_feature/java-new_feature-7.html</guid>
       </item>
       
     
@@ -36,8 +35,8 @@ Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)&l
         
         <pubDate>Sat, 12 Jan 2019 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/etc/etc-crypto.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/etc/etc-crypto.html</guid>
+        http://localhost:4000/category/etc/etc-crypto.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/etc/etc-crypto.html</guid>
       </item>
       
     
@@ -75,8 +74,8 @@ Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)&l
         
         <pubDate>Fri, 11 Jan 2019 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/etc/container-2-monitoring.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/etc/container-2-monitoring.html</guid>
+        http://localhost:4000/category/etc/container-2-monitoring.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/etc/container-2-monitoring.html</guid>
       </item>
       
     
@@ -106,8 +105,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/docker/guide/guide-3-compose.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/docker/guide/guide-3-compose.html</guid>
+        http://localhost:4000/category/docker/guide/guide-3-compose.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-3-compose.html</guid>
       </item>
       
     
@@ -123,8 +122,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/docker/guide/guide-2-network.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/docker/guide/guide-2-network.html</guid>
+        http://localhost:4000/category/docker/guide/guide-2-network.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-2-network.html</guid>
       </item>
       
     
@@ -145,8 +144,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Fri, 21 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/docker/guide/container-1-home.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/docker/guide/container-1-home.html</guid>
+        http://localhost:4000/category/docker/guide/container-1-home.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/container-1-home.html</guid>
       </item>
       
     
@@ -163,8 +162,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/etc/etc-ga.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/etc/etc-ga.html</guid>
+        http://localhost:4000/category/etc/etc-ga.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/etc/etc-ga.html</guid>
       </item>
       
     
@@ -181,8 +180,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Thu, 20 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/docker/guide/guide-1-basic.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/docker/guide/guide-1-basic.html</guid>
+        http://localhost:4000/category/docker/guide/guide-1-basic.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/docker/guide/guide-1-basic.html</guid>
       </item>
       
     
@@ -199,8 +198,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-3-category.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-3-category.html</guid>
       </item>
       
     
@@ -217,8 +216,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Tue, 18 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-2-theme.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-2-theme.html</guid>
       </item>
       
     
@@ -240,8 +239,8 @@ Docker Compose 란?&lt;/p&gt;
         
         <pubDate>Mon, 17 Dec 2018 09:00:00 +0900</pubDate>
         <link>
-        https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html</link>
-        <guid isPermaLink="true">https://alexonepath.github.io/category/githubpage/jekyll/jekyll-1-init.html</guid>
+        http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</link>
+        <guid isPermaLink="true">http://localhost:4000/category/githubpage/jekyll/jekyll-1-init.html</guid>
       </item>
       
     

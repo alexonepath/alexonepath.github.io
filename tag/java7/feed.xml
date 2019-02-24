@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://alexonepath.github.io/tag/java7/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://alexonepath.github.io/" rel="alternate" type="text/html" />
-  <updated>2019-02-24T14:57:56+09:00</updated>
-  <id>https://alexonepath.github.io/tag/java7/feed.xml</id>
+  <link href="http://localhost:4000/tag/java7/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2019-02-24T23:03:52+09:00</updated>
+  <id>http://localhost:4000/tag/java7/feed.xml</id>
 
   
   
@@ -32,14 +32,13 @@
 
   
     <entry>
-      <title type="html">Java New Feature</title>
-      <link href="https://alexonepath.github.io/category/java/java-new-featue.html" rel="alternate" type="text/html" title="Java New Feature" />
+      <title type="html">Java7 New Feature</title>
+      <link href="http://localhost:4000/category/java/new_feature/java-new_feature-7.html" rel="alternate" type="text/html" title="Java7 New Feature" />
       <published>2019-02-24T09:00:00+09:00</published>
       <updated>2019-02-24T09:00:00+09:00</updated>
-      <id>https://alexonepath.github.io/category/java/java-new-featue</id>
-      <content type="html" xml:base="https://alexonepath.github.io/category/java/java-new-featue.html">&lt;blockquote&gt;
-  &lt;p&gt;Java7, 8의 새로운 특징을 알아본다.&lt;br /&gt;
-Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)&lt;/p&gt;
+      <id>http://localhost:4000/category/java/new_feature/java-new_feature-7</id>
+      <content type="html" xml:base="http://localhost:4000/category/java/new_feature/java-new_feature-7.html">&lt;blockquote&gt;
+  &lt;p&gt;Java7의 새로운 특징을 알아본다.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;java7&quot;&gt;Java7&lt;/h3&gt;
@@ -107,33 +106,7 @@ try &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FileInputStream fis &lt;span c
       &lt;li&gt;More Precise Rethrowing of Exception&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;java8-나중에-추가&quot;&gt;Java8 (나중에 추가)&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;스트림 API&lt;br /&gt;
-메서드에 코드 전달 (메서드 레퍼런스와 람다)&lt;br /&gt;
-인터페이스의 디폴트 메서&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;스트림 API&lt;/strong&gt;
-스트림이란? 한번에 한개씩 만들어지는 연속적인 데이터 항목들의 모임.&lt;br /&gt;
-프로그램은 입력 스트림에서 한개씩 읽어 들이며 출력 스트림으로 데이터를 한개씩 기록한다.&lt;br /&gt;
-즉, 어떤 프로그램의 출력은 다른 프로그램의 입력 스트림이 될 수 있다. ex) 리눅스의 파이프&lt;/p&gt;
-
-&lt;p&gt;장점&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;스레드를 이용하지 않고도 멀티 코어를 활용할 수 있게됨.&lt;/li&gt;
-  &lt;li&gt;작업을 고수준으로 추상화하여 일련의 스트림으로 만들어 처리할 수 있음.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;String&amp;gt; list &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Arrays.asList&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a1&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;a2&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;b1&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;c2&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;c1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-list.stream&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    .filter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s -&amp;gt; s.startsWith&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
-    .map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;String::toUpperCase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    .sorted&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    .forEach&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;System.out::println&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+&lt;/ol&gt;</content>
 
       
       
@@ -152,13 +125,9 @@ list.stream&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
       
         <category term="java7" />
       
-        <category term="java8" />
-      
-        <category term="java9" />
-      
 
       
-        <summary type="html">Java7, 8의 새로운 특징을 알아본다. Java8의 람다 컬렉션 처리에 대한 예제를 포함한다. (나중에)</summary>
+        <summary type="html">Java7의 새로운 특징을 알아본다.</summary>
       
 
       

@@ -2,15 +2,6 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131245045-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-131245045-1');
-</script>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -49,7 +40,7 @@
     <meta property="og:description" content="암호화 알고리즘에 대해서 설명한다.">
     <meta property="og:image" content="">
 
-    <meta property="og:url" content="https://alexonepath.github.io/category/etc/etc-crypto.html">
+    <meta property="og:url" content="http://localhost:4000/category/etc/etc-crypto.html">
     <meta property="og:description" content="암호화 알고리즘에 대해서 설명한다.">
 </head>
 <body class="ajax-loading" data-site-url="" data-page-url="/">
@@ -80,6 +71,15 @@
     
         <script>
             categoryName = 'java';
+            if (postMap.hasOwnProperty(categoryName)) {
+                postMap[categoryName] += 1;
+            } else {
+                postMap[categoryName] = 1;
+            }
+        </script>
+    
+        <script>
+            categoryName = 'new_feature';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
             } else {
@@ -281,19 +281,22 @@
     
         
     
+        
+    
 
     
     
     
     
-    <li id="menu4" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
+    <li id="menu5" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Github Page <script>if(postMap['githubpage'] != undefined){document.write('('+postMap['githubpage']+')');}</script></a>
     </li>
     
         <ul class="menu-submenu accordion-content">
             
-                <li><a class="head menu__list__item" href="/category/githubpage/jekyll/">jekyll <script>if(postMap['jekyll'] != undefined){document.write('('+postMap['jekyll']+')');}</script></a></li>
+            
+            <li><a class="head menu__list__item" href="/category/githubpage/jekyll/">jekyll <script>if(postMap['jekyll'] != undefined){document.write('('+postMap['jekyll']+')');}</script></a></li>
             
         </ul>
     
@@ -304,16 +307,18 @@
     
     
     
-    <li id="menu5" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
+    <li id="menu6" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Docker <script>if(postMap['docker'] != undefined){document.write('('+postMap['docker']+')');}</script></a>
     </li>
     
         <ul class="menu-submenu accordion-content">
             
-                <li><a class="head menu__list__item" href="/category/docker/guide/">guide <script>if(postMap['guide'] != undefined){document.write('('+postMap['guide']+')');}</script></a></li>
             
-                <li><a class="head menu__list__item" href="/category/docker/container/">container <script>if(postMap['container'] != undefined){document.write('('+postMap['container']+')');}</script></a></li>
+            <li><a class="head menu__list__item" href="/category/docker/guide/">guide <script>if(postMap['guide'] != undefined){document.write('('+postMap['guide']+')');}</script></a></li>
+            
+            
+            <li><a class="head menu__list__item" href="/category/docker/container/">container <script>if(postMap['container'] != undefined){document.write('('+postMap['container']+')');}</script></a></li>
             
         </ul>
     
@@ -324,19 +329,26 @@
     
     
     
-    <li id="menu6" class="toggle menu__list__item " path="/category/java/">
-        <span class=""></span>
-        <a class="menu-link" href="/category/java/">Java <script>if(postMap['java'] != undefined){document.write('('+postMap['java']+')');}</script></a>
+    <li id="menu7" class="toggle menu__list__item accordion-toggle" path="/category/java/">
+        <span class="icon-plus"></span>
+        <a class="menu-link" href="#">Java <script>if(postMap['java'] != undefined){document.write('('+postMap['java']+')');}</script></a>
     </li>
     
-
+        <ul class="menu-submenu accordion-content">
+            
+            
+            <li><a class="head menu__list__item" href="/category/java/new_feature/">New Feature <script>if(postMap['new_feature'] != undefined){document.write('('+postMap['new_feature']+')');}</script></a></li>
+            
+        </ul>
     
 
     
+
     
     
     
-    <li id="menu7" class="toggle menu__list__item " path="/category/etc/">
+    
+    <li id="menu8" class="toggle menu__list__item " path="/category/etc/">
         <span class=""></span>
         <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
     </li>

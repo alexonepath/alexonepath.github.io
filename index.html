@@ -77,26 +77,6 @@
 
     
         <script>
-            categoryName = 'java';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-        <script>
-            categoryName = 'new_feature';
-            if (postMap.hasOwnProperty(categoryName)) {
-                postMap[categoryName] += 1;
-            } else {
-                postMap[categoryName] = 1;
-            }
-        </script>
-    
-
-    
-        <script>
             categoryName = 'etc';
             if (postMap.hasOwnProperty(categoryName)) {
                 postMap[categoryName] += 1;
@@ -288,14 +268,12 @@
     
         
     
-        
-    
 
     
     
     
     
-    <li id="menu5" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
+    <li id="menu4" class="toggle menu__list__item accordion-toggle" path="/category/githubpage/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Github Page <script>if(postMap['githubpage'] != undefined){document.write('('+postMap['githubpage']+')');}</script></a>
     </li>
@@ -314,7 +292,7 @@
     
     
     
-    <li id="menu6" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
+    <li id="menu5" class="toggle menu__list__item accordion-toggle" path="/category/docker/">
         <span class="icon-plus"></span>
         <a class="menu-link" href="#">Docker <script>if(postMap['docker'] != undefined){document.write('('+postMap['docker']+')');}</script></a>
     </li>
@@ -336,26 +314,7 @@
     
     
     
-    <li id="menu7" class="toggle menu__list__item accordion-toggle" path="/category/java/">
-        <span class="icon-plus"></span>
-        <a class="menu-link" href="#">Java <script>if(postMap['java'] != undefined){document.write('('+postMap['java']+')');}</script></a>
-    </li>
-    
-        <ul class="menu-submenu accordion-content">
-            
-            
-            <li><a class="head menu__list__item" href="/category/java/new_feature/">New Feature <script>if(postMap['new_feature'] != undefined){document.write('('+postMap['new_feature']+')');}</script></a></li>
-            
-        </ul>
-    
-
-    
-
-    
-    
-    
-    
-    <li id="menu8" class="toggle menu__list__item " path="/category/etc/">
+    <li id="menu6" class="toggle menu__list__item " path="/category/etc/">
         <span class=""></span>
         <a class="menu-link" href="/category/etc/">이모저모 <script>if(postMap['etc'] != undefined){document.write('('+postMap['etc']+')');}</script></a>
     </li>
@@ -430,17 +389,6 @@
     <div class="page__content">
         <section class="blog single">
             <div class="wrap">
-                
-                    <article class="blog-post">
-                        <div class="blog-post__header">
-                            <h2 class="blog-post__title"><a href="/category/java/new_feature/java-new_feature-7.html">Java7 New Feature</a></h2>
-                            <p class="blog-post__subtitle">Feb 24, 2019</p>
-                        </div>
-
-                        <div class="blog-post__content">
-                            <p></p>
-                        </div>
-                    </article>
                 
                     <article class="blog-post">
                         <div class="blog-post__header">
@@ -541,46 +489,20 @@
                         </div>
                     </article>
                 
+                    <article class="blog-post">
+                        <div class="blog-post__header">
+                            <h2 class="blog-post__title"><a href="/category/githubpage/jekyll/jekyll-1-init.html">Jekyll 시작하기</a></h2>
+                            <p class="blog-post__subtitle">Dec 17, 2018</p>
+                        </div>
+
+                        <div class="blog-post__content">
+                            <p>Jekyll을 이용한 Github Page 활용방법</p>
+                        </div>
+                    </article>
+                
 
                 <!--Page Navigation-->
                 
-    <ul id="pagination" role="navigation">
-        
-        
-        
-        
-
-        
-        
-        
-
-        <li id="page-prev">
-            
-                <span class="sr-only">No Previous Page</span>
-            
-        </li>
-
-        
-            
-            
-            
-            
-            <li class="page-number active"><a href="/">1</a></li>
-        
-            
-            
-            
-            
-            <li class="page-number "><a href="/page2">2</a></li>
-        
-
-        <li id="page-next">
-            
-                <a href="/page2"><span class="sr-only">Next Page</span></a>
-            
-        </li>
-    </ul>
-
             </div>
         </section>
     </div>
